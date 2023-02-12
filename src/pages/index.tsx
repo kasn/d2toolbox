@@ -117,7 +117,7 @@ export default function Home() {
             >
               {tools.map((tool) => (
                 <li key={tool.name}>
-                  <a href={tool.url} target="_blank">
+                  <a href={tool.url} target="_blank" rel="noreferrer">
                     <img
                       className="aspect-[5/4] w-full rounded-2xl object-cover"
                       src={tool.image}
@@ -125,7 +125,7 @@ export default function Home() {
                     />
                   </a>
                   <h2 className="mt-6 text-3xl font-bold leading-8 tracking-tight text-gray-900">
-                    <a href={tool.url} target="_blank">
+                    <a href={tool.url} target="_blank" rel="noreferrer">
                       {tool.name}
                     </a>
                   </h2>
