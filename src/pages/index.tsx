@@ -132,7 +132,7 @@ export default function Home() {
                   <p className="text-base mt-6 leading-7 text-gray-600">
                     {tool.description}
                   </p>
-                  <ul role="list" className="mt-6 flex gap-x-6">
+                  {/* <ul role="list" className="mt-6 flex gap-x-6">
                     <li>
                       <a
                         href={tool.url}
@@ -149,7 +149,7 @@ export default function Home() {
                         </svg>
                       </a>
                     </li>
-                  </ul>
+                  </ul> */}
                 </li>
               ))}
             </ul>
