@@ -47,6 +47,19 @@ const tools: Array<TTool> = [
     ],
   },
   {
+    name: "D2ArmorPicker",
+    url: "https://d2armorpicker.com/#/",
+    image: "/images/d2armorpicker.png",
+    description:
+      "D2ArmorPicker (or short D2AP) is a small web-app to quickly find armor that fits your desired stat requirements. It uses the armor in your vault, inventory and postmaster, calculates every possible variation and shows only those that fulfill the given requirements.",
+    requiresLogin: true,
+    additionalLinks: [
+      "https://twitter.com/MijagoCoding/",
+      "https://ko-fi.com/mijago",
+      "https://discord.com/invite/7eFjeVbz2V",
+    ],
+  },
+  {
     name: "D2Checkpoint.com",
     url: "https://d2checkpoint.com/",
     image: "/images/d2checkpoint.png",
@@ -141,19 +154,6 @@ const tools: Array<TTool> = [
       "https://www.twitch.tv/whereisxur",
       "https://www.youtube.com/whereisxurnow",
       "https://discord.com/invite/ZgudXPZ",
-    ],
-  },
-  {
-    name: "D2ArmorPicker",
-    url: "https://d2armorpicker.com/#/",
-    image: "/images/d2armorpicker.png",
-    description:
-      "D2ArmorPicker (or short D2AP) is a small web-app to quickly find armor that fits your desired stat requirements. It uses the armor in your vault, inventory and postmaster, calculates every possible variation and shows only those that fulfill the given requirements.",
-    requiresLogin: true,
-    additionalLinks: [
-      "https://twitter.com/MijagoCoding/",
-      "https://ko-fi.com/mijago",
-      "https://discord.com/invite/7eFjeVbz2V",
     ],
   },
   {
