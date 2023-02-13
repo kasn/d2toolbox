@@ -1,3 +1,5 @@
+import { SocialIcon } from "react-social-icons";
+
 const Footer = () => (
   <div className="bg-gray-100 pt-2 mt-5">
     <div
@@ -21,17 +23,20 @@ const Footer = () => (
         </a>
       </div>
       <div className="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
-        <a href="https://twitter.com/kasn" className="w-12 mx-1">
-          Twitter
-        </a>
-        <a
-          href="https://github.com/kasn/d2toolbox"
-          className="w-12 mx-1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
+        <div className="w-12 mx-1">
+          <SocialIcon
+            url="https://twitter.com/kasn"
+            target="_blank"
+            rel="noopener noreferrer"
+          />
+        </div>
+        <div className="w-12 mx-1">
+          <SocialIcon
+            url="https://github.com/kasn/d2toolbox"
+            target="_blank"
+            rel="noopener noreferrer"
+          />
+        </div>
       </div>
     </div>
   </div>
