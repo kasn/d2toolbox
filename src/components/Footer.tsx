@@ -1,11 +1,11 @@
 const Footer = () => (
-  <div className="bg-gray-100 pt-2 ">
+  <div className="bg-gray-100 pt-2 mt-5">
     <div
       className="flex pb-5 px-3 m-auto pt-5 text-gray-800 text-sm flex-col
       md:flex-row max-w-6xl"
     >
       <div className="mt-2">
-        © Copyright 2020. All Rights Reserved.
+        © Copyright 2022. All Rights Reserved.
         <br />
         Bungie Content © Bungie, Inc. All rights reserved. Destiny, the Destiny
         Logo, Bungie and the Bungie logo are among the trademarks of Bungie,
