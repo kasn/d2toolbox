@@ -26,7 +26,12 @@ function Tool({ tool }: ToolProps) {
         <ul role="list" className="mt-6 flex gap-x-6">
           {tool.additionalLinks.map((link) => (
             <li key={link}>
-              <SocialIcon url={link} label={`${tool.name}`} />
+              <SocialIcon
+                url={link}
+                label={`${tool.name}`}
+                style={{ width: "25px", height: "25px" }}
+                bgColor="#ccc"
+              />
             </li>
           ))}
         </ul>
