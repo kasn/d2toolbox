@@ -1,13 +1,8 @@
-type TAdditionalLink = {
-  url: string;
-  type: string;
-};
-
 type TTool = {
   name: string;
   url: string;
   description: ReactElement | string;
-  additionalLinks?: Array<TAdditionalLink>;
+  additionalLinks?: Array<string>;
   image: string;
   requiresLogin: boolean;
 };

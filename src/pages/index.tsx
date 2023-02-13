@@ -21,10 +21,9 @@ const tools: Array<TTool> = [
       </>
     ),
     additionalLinks: [
-      {
-        url: "https://twitter.com/BraytechHelp",
-        type: "twitter",
-      },
+      "https://twitter.com/BraytechHelp",
+      "https://discord.com/invite/8jESWWX",
+      "https://www.patreon.com/braytech",
     ],
   },
   {
@@ -40,6 +39,12 @@ const tools: Array<TTool> = [
         Destiny Item Manager.
       </>
     ),
+    additionalLinks: [
+      "https://twitter.com/ThisIsDIM",
+      "https://www.reddit.com/r/DestinyItemManager/",
+      "https://github.com/DestinyItemManager/DIM/",
+      "https://discord.com/invite/UK2GWC7",
+    ],
   },
   {
     name: "D2Checkpoint.com",
@@ -47,6 +52,10 @@ const tools: Array<TTool> = [
     image: "/images/d2checkpoint.png",
     requiresLogin: false,
     description: <>Find checkpoits for raid and dungeon encouters</>,
+    additionalLinks: [
+      "https://discord.com/invite/d2checkpoint",
+      "https://ko-fi.com/d2checkpoint",
+    ],
   },
   {
     name: "light.gg",
@@ -55,6 +64,12 @@ const tools: Array<TTool> = [
     requiresLogin: false,
     description:
       "home of the most powerful Destiny 2 Database & Tools on the Internet",
+    additionalLinks: [
+      "https://twitter.com/lightdotgg",
+      "https://discord.com/invite/pmHRd5U",
+      "https://www.light.gg/account/patreon",
+      "https://www.youtube.com/c/lightggdb",
+    ],
   },
   {
     name: "engram.blue",
@@ -74,6 +89,7 @@ const tools: Array<TTool> = [
         Browse Wishlist recommendations for weapons
       </>
     ),
+    additionalLinks: ["https://discord.com/invite/Kfuqcw4msG"],
   },
   {
     name: "Ishtar Collective",
@@ -82,6 +98,14 @@ const tools: Array<TTool> = [
     requiresLogin: false,
     description:
       "Our goal is to collect, organize and summarize any information that could be useful to the research being carried out by Ishtar Collective personnel.",
+    additionalLinks: [
+      "https://twitter.com/IshtarColl",
+      "https://www.patreon.com/ishtarcollective",
+      "https://commons.ishtar-collective.net/",
+      "https://errata.ishtar-collective.net/",
+      "https://discord.com/invite/R33Wncn",
+      "https://ishtar-collective.tumblr.com/",
+    ],
   },
   {
     name: "raid.report",
@@ -89,13 +113,22 @@ const tools: Array<TTool> = [
     image: "/images/raid.report.png",
     description: "Show raid completions and stats",
     requiresLogin: false,
+    additionalLinks: [
+      "https://twitter.com/RaidReport",
+      "https://dungeon.report/",
+    ],
   },
+
   {
-    name: "today in Destiny",
+    name: "TodayInDestiny",
     url: "https://todayindestiny.com/",
     description: "What should we do today Guardian?",
     image: "/images/todayindestiny.png",
     requiresLogin: false,
+    additionalLinks: [
+      "https://www.patreon.com/todayindestiny",
+      "https://ko-fi.com/JpDeathBlade",
+    ],
   },
   {
     name: "Where is Xur?",
@@ -103,6 +136,12 @@ const tools: Array<TTool> = [
     image: "/images/whereisxur.png",
     description: 'Nobody ever asks "How is Xur?"',
     requiresLogin: false,
+    additionalLinks: [
+      "https://twitter.com/xurwatchlive",
+      "https://www.twitch.tv/whereisxur",
+      "https://www.youtube.com/whereisxurnow",
+      "https://discord.com/invite/ZgudXPZ",
+    ],
   },
   {
     name: "D2ArmorPicker",
@@ -111,6 +150,11 @@ const tools: Array<TTool> = [
     description:
       "D2ArmorPicker (or short D2AP) is a small web-app to quickly find armor that fits your desired stat requirements. It uses the armor in your vault, inventory and postmaster, calculates every possible variation and shows only those that fulfill the given requirements.",
     requiresLogin: true,
+    additionalLinks: [
+      "https://twitter.com/MijagoCoding/",
+      "https://ko-fi.com/mijago",
+      "https://discord.com/invite/7eFjeVbz2V",
+    ],
   },
   {
     name: "bungie.net",
@@ -118,6 +162,10 @@ const tools: Array<TTool> = [
     image: "/images/bungie.png",
     description: "the home of destiny 2",
     requiresLogin: true,
+    additionalLinks: [
+      "https://twitter.com/bungie",
+      "https://twitter.com/destinythegame",
+    ],
   },
 ];
 
