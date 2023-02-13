@@ -182,7 +182,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="m-14 grid grid-cols-1 items-start gap-y-8 gap-x-8 sm:mt-16 sm:gap-y-16 lg:mt-24 lg:grid-cols-4">
+        <div className="m-14 grid grid-cols-1 items-start gap-y-8 gap-x-8 sm:mt-16 sm:gap-y-16 lg:mt-24 lg:grid-cols-3 xl:grid-cols-4">
           <div className="grid auto-cols-auto grid-flow-col justify-start gap-x-8 gap-y-10 whitespace-nowrap px-4 mx-auto sm:max-w-2xl sm:grid-cols-1 sm:px-0 lg:grid-flow-row lg:grid-cols-1">
             <div>
               <div className="flex lg:justify-center lg:items-center">
@@ -198,7 +198,7 @@ export default function Home() {
           </div>
           <ul
             role="list"
-            className="lg:col-span-3 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-16 md:grid-cols-3 [&:not(:focus-visible)]:focus:outline-none"
+            className="lg:col-span-2 xl:col-span-3 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-16 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 [&:not(:focus-visible)]:focus:outline-none"
           >
             {tools.map((tool) => (
               <Tool key={tool.name} tool={tool} />
