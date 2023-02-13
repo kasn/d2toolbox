@@ -134,34 +134,30 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="bg-white py-24 sm:py-32">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:mx-0">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                <Destiny
-                  fill="#000"
-                  style={{
-                    width: "60px",
-                    height: "60px",
-                  }}
-                />
+        <div className="m-14 grid grid-cols-1 items-start gap-y-8 gap-x-8 sm:mt-16 sm:gap-y-16 lg:mt-24 lg:grid-cols-4">
+          <div className="grid auto-cols-auto grid-flow-col justify-start gap-x-8 gap-y-10 whitespace-nowrap px-4 mx-auto sm:max-w-2xl sm:grid-cols-1 sm:px-0 lg:grid-flow-row lg:grid-cols-1">
+            <div>
+              <div className="flex lg:justify-center lg:items-center">
+                <Destiny fill="#000" />
+              </div>
+              <h2 className="mt-6 text-3xl font-bold text-gray-900 sm:text-4xl lg:text-center tracking-tight whitespace-normal ">
                 Destiny 2 Tools
               </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
+              <p className="mt-6 text-lg leading-8 text-gray-600 whitespace-normal lg:text-center">
                 A list of valuable tools for every Guardian.
               </p>
             </div>
-            <ul
-              role="list"
-              className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
-            >
-              {tools.map((tool) => (
-                <Tool key={tool.name} tool={tool} />
-              ))}
-            </ul>
           </div>
-          <Footer />
+          <ul
+            role="list"
+            className="lg:col-span-3 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-16 md:grid-cols-3 [&:not(:focus-visible)]:focus:outline-none"
+          >
+            {tools.map((tool) => (
+              <Tool key={tool.name} tool={tool} />
+            ))}
+          </ul>
         </div>
+        <Footer />
       </main>
     </>
   );
