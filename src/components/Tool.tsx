@@ -23,7 +23,7 @@ function Tool({ tool }: ToolProps) {
       {tool.additionalLinks ? (
         <ul role="list" className="mt-6 flex gap-x-6">
           {tool.additionalLinks.map((link) => (
-            <li>
+            <li key={link.type}>
               <a href={tool.url} className="text-gray-400 hover:text-gray-500">
                 <span className="sr-only">Twitter</span>
                 <svg
