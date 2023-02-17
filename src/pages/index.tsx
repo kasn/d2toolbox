@@ -105,6 +105,33 @@ const tools: Array<TTool> = [
     additionalLinks: ["https://discord.com/invite/Kfuqcw4msG"],
   },
   {
+    name: "Destiny Recipes",
+    description:
+      "You can find here a list of helpful tools for Destiny 2. I like to call them recipes for success.",
+    url: "https://destinyrecipes.com/",
+    requiresLogin: true,
+    image: "/images/destinyrecipes.png",
+    additionalLinks: [
+      "https://twitter.com/D2Recipes",
+      "https://discord.com/invite/cX8R6wPRB8",
+      "https://ko-fi.com/alanbalbo",
+    ],
+  },
+  {
+    name: "D2 Checklist",
+    url: "https://www.d2checklist.com/",
+    image: "/images/d2checklist.png",
+    requiresLogin: true,
+    description:
+      "D2Checklist uses the Bungie API to help make achieving your goals in Destiny easier and more fun.",
+    additionalLinks: [
+      "https://www.reddit.com/r/destinychecklistnet/",
+      "https://github.com/dcaslin/d2-checklist/",
+      "https://twitter.com/D2Checklist",
+      "https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=VBASBDZD7HAHS",
+    ],
+  },
+  {
     name: "Ishtar Collective",
     url: "https://www.ishtar-collective.net/",
     image: "/images/ishtar-collective.png",

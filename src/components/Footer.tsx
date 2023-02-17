@@ -13,6 +13,9 @@ const Footer = () => (
         Logo, Bungie and the Bungie logo are among the trademarks of Bungie,
         Inc.
         <br />
+        Destiny 2 is a registered trademark of Bungie. Trademarks are the
+        property of their respective owners. Game materials copyright Bungie.
+        <br />
         Destiny Icons provided by{" "}
         <a
           href="https://github.com/justrealmilk/destiny-icons"
