@@ -32,7 +32,6 @@ export default function Home() {
             <ModeToggle />
           </div>
         </header>
-
         <div className="m-14 grid grid-cols-1 items-start gap-y-8 gap-x-8 sm:mt-16 sm:gap-y-16 lg:gap-y-10 lg:mt-24 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
           <div className="grid auto-cols-auto grid-flow-col justify-start gap-x-8 gap-y-10 whitespace-nowrap px-4 mx-auto sm:max-w-2xl sm:grid-cols-1 sm:px-0 lg:grid-flow-row lg:grid-cols-1">
             <div>
@@ -66,6 +65,7 @@ export default function Home() {
           </ul>
         </div>
         <Footer />
+        <section className="w-full h-screen bg-center bg-cover bg-traveller"></section>
       </main>
     </>
   );

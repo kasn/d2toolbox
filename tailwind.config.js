@@ -10,7 +10,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: (theme) => ({
+        traveller: "url('/images/background.jpg')",
+      }),
+    },
   },
   plugins: [],
 };
