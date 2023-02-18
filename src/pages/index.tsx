@@ -1,7 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "@next/font/google";
-import { ReactElement } from "react";
 import Footer from "@/components/Footer";
 import Tool from "@/components/Tool";
 import Destiny from "@/components/svg/destiny.svg";
@@ -209,7 +207,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="m-14 grid grid-cols-1 items-start gap-y-8 gap-x-8 sm:mt-16 sm:gap-y-16 lg:mt-24 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="m-14 grid grid-cols-1 items-start gap-y-8 gap-x-8 sm:mt-16 sm:gap-y-16 lg:mt-24 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
           <div className="grid auto-cols-auto grid-flow-col justify-start gap-x-8 gap-y-10 whitespace-nowrap px-4 mx-auto sm:max-w-2xl sm:grid-cols-1 sm:px-0 lg:grid-flow-row lg:grid-cols-1">
             <div>
               <div className="flex lg:justify-center lg:items-center">
@@ -218,14 +216,23 @@ export default function Home() {
               <h2 className="mt-6 text-3xl font-bold text-gray-900 sm:text-4xl lg:text-center tracking-tight whitespace-normal ">
                 Destiny 2 Tools
               </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600 whitespace-normal lg:text-center">
-                A list of valuable tools for every Guardian.
+              <p className="mt-6 text-xl leading-8 text-gray-600 whitespace-normal lg:text-center">
+                A list of valuable resources for every Guardian.
+              </p>
+              <p>
+                <p className="mt-6 text leading-8 text-gray-600 whitespace-normal">
+                  Destiny 2 is an enourmous game that can be overwhelming for
+                  new players.
+                  <br />
+                  We aim to create an exhaustive list of all the tools that will
+                  help to make the most out of the game.
+                </p>
               </p>
             </div>
           </div>
           <ul
             role="list"
-            className="lg:col-span-2 xl:col-span-3 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-16 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 [&:not(:focus-visible)]:focus:outline-none"
+            className="lg:col-span-2 xl:col-span-3 2xl:col-span-4 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-16 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 [&:not(:focus-visible)]:focus:outline-none"
           >
             {tools.map((tool) => (
               <Tool key={tool.name} tool={tool} />
