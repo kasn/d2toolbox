@@ -1,9 +1,9 @@
 import { SocialIcon } from "react-social-icons";
 
 const Footer = () => (
-  <div className="bg-gray-100 pt-2 mt-5">
+  <div className="bg-gray-100 dark:bg-white/5 pt-2 mt-5">
     <div
-      className="flex pb-5 px-3 m-auto pt-5 text-gray-800 text-sm flex-col
+      className="flex pb-5 px-3 m-auto pt-5 text-gray-800 dark:text-white text-sm flex-col
       md:flex-row max-w-6xl"
     >
       <div className="mt-2">
@@ -38,6 +38,7 @@ const Footer = () => (
             url="https://github.com/kasn/d2toolbox"
             target="_blank"
             rel="noopener noreferrer"
+            className="fill:white/5"
           />
         </div>
       </div>

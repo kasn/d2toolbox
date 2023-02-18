@@ -14,12 +14,12 @@ function Tool({ tool }: ToolProps) {
           alt={tool.name}
         />
       </a>
-      <h2 className="mt-6 text-3xl font-bold leading-8 tracking-tight text-gray-900">
+      <h2 className="mt-6 text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-white">
         <a href={tool.url} target="_blank" rel="noreferrer">
           {tool.name}
         </a>
       </h2>
-      <p className="text-base mt-6 leading-7 text-gray-600">
+      <p className="text-base mt-6 leading-7 text-gray-600 dark:text-white">
         {tool.description}
       </p>
       {tool.additionalLinks ? (
