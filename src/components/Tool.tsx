@@ -19,7 +19,7 @@ function Tool({ tool }: ToolProps) {
           alt={tool.name}
         />
       </a>
-      <p className="text-base mt-3 leading-7 text-gray-600 dark:text-white">
+      <p className="mt-3 text-base leading-7 text-gray-600 dark:text-white">
         {tool.description}
       </p>
       {tool.additionalLinks ? (

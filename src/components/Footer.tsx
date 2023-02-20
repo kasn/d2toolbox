@@ -1,10 +1,10 @@
 import { SocialIcon } from "react-social-icons";
 
 const Footer = () => (
-  <div className="bg-gray-100 dark:bg-white/5 pt-2 mt-5">
+  <div className="mt-5 bg-gray-100 pt-2 dark:bg-white/5">
     <div
-      className="flex pb-5 px-3 m-auto pt-5 text-gray-800 dark:text-white text-sm flex-col
-      md:flex-row max-w-6xl"
+      className="m-auto flex max-w-6xl flex-col px-3 pb-5 pt-5 text-sm text-gray-800
+      dark:text-white md:flex-row"
     >
       <div className="mt-2">
         © Copyright 2023. All Rights Reserved.
@@ -25,15 +25,15 @@ const Footer = () => (
           justrealmilk/destiny-icons
         </a>
       </div>
-      <div className="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
-        <div className="w-12 mx-1">
+      <div className="mt-2 flex flex-row md:flex-auto md:flex-row-reverse">
+        <div className="mx-1 w-12">
           <SocialIcon
             url="https://twitter.com/kasn"
             target="_blank"
             rel="noopener noreferrer"
           />
         </div>
-        <div className="w-12 mx-1">
+        <div className="mx-1 w-12">
           <SocialIcon
             url="https://github.com/kasn/d2toolbox"
             target="_blank"
