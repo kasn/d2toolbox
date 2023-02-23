@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SocialIcon } from "react-social-icons";
 
 type ToolProps = {
@@ -13,10 +14,12 @@ function Tool({ tool }: ToolProps) {
         </a>
       </h2>
       <a href={tool.url} target="_blank" rel="noreferrer">
-        <img
-          className="aspect-[5/4] w-full rounded-xl object-cover shadow-lg"
-          src={tool.image}
+        <Image
           alt={tool.name}
+          className="aspect-[5/4] w-full rounded-xl object-cover shadow-lg"
+          src={tool.image.src}
+          width={tool.image.width}
+          height={tool.image.height}
         />
       </a>
       <p className="mt-3 text-base leading-7 text-gray-600 dark:text-white">

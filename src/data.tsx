@@ -2,7 +2,7 @@ export const tools: Array<TTool> = [
   {
     name: "BRAYTECH",
     url: "https://bray.tech/",
-    image: "/images/braytech.png",
+    image: { src: "/images/braytech.png", width: 700, height: 527 },
     requiresLogin: true,
     description: (
       <>
@@ -19,7 +19,7 @@ export const tools: Array<TTool> = [
   {
     name: "Destiny Item Manager",
     url: "https://app.destinyitemmanager.com/",
-    image: "/images/dim.png",
+    image: { src: "/images/dim.png", width: 700, height: 552 },
     requiresLogin: true,
     description: (
       <>
@@ -39,7 +39,7 @@ export const tools: Array<TTool> = [
   {
     name: "D2ArmorPicker",
     url: "https://d2armorpicker.com/#/",
-    image: "/images/d2armorpicker.png",
+    image: { src: "/images/d2armorpicker.png", width: 700, height: 552 },
     description:
       "D2ArmorPicker (or short D2AP) is a small web-app to quickly find armor that fits your desired stat requirements. It uses the armor in your vault, inventory and postmaster, calculates every possible variation and shows only those that fulfill the given requirements.",
     requiresLogin: true,
@@ -52,7 +52,7 @@ export const tools: Array<TTool> = [
   {
     name: "D2Checkpoint.com",
     url: "https://d2checkpoint.com/",
-    image: "/images/d2checkpoint.png",
+    image: { src: "/images/d2checkpoint.png", width: 700, height: 627 },
     requiresLogin: false,
     description: <>Find checkpoits for raid and dungeon encouters</>,
     additionalLinks: [
@@ -63,7 +63,7 @@ export const tools: Array<TTool> = [
   {
     name: "light.gg",
     url: "https://www.light.gg/",
-    image: "/images/light.gg.png",
+    image: { src: "/images/light.gg.png", width: 700, height: 552 },
     requiresLogin: false,
     description:
       "home of the most powerful Destiny 2 Database & Tools on the Internet",
@@ -77,7 +77,7 @@ export const tools: Array<TTool> = [
   {
     name: "engram.blue",
     url: "https://engram.blue/",
-    image: "/images/engram.blue.png",
+    image: { src: "/images/engram.blue.png", width: 700, height: 552 },
     requiresLogin: true,
     description: (
       <>
@@ -100,7 +100,7 @@ export const tools: Array<TTool> = [
       "You can find here a list of helpful tools for Destiny 2. I like to call them recipes for success.",
     url: "https://destinyrecipes.com/",
     requiresLogin: true,
-    image: "/images/destinyrecipes.png",
+    image: { src: "/images/destinyrecipes.png", width: 700, height: 627 },
     additionalLinks: [
       "https://twitter.com/D2Recipes",
       "https://discord.com/invite/cX8R6wPRB8",
@@ -110,7 +110,7 @@ export const tools: Array<TTool> = [
   {
     name: "D2 Checklist",
     url: "https://www.d2checklist.com/",
-    image: "/images/d2checklist.png",
+    image: { src: "/images/d2checklist.png", width: 700, height: 627 },
     requiresLogin: true,
     description:
       "D2Checklist uses the Bungie API to help make achieving your goals in Destiny easier and more fun.",
@@ -124,7 +124,7 @@ export const tools: Array<TTool> = [
   {
     name: "Ishtar Collective",
     url: "https://www.ishtar-collective.net/",
-    image: "/images/ishtar-collective.png",
+    image: { src: "/images/ishtar-collective.png", width: 700, height: 527 },
     requiresLogin: false,
     description:
       "Our goal is to collect, organize and summarize any information that could be useful to the research being carried out by Ishtar Collective personnel.",
@@ -140,7 +140,7 @@ export const tools: Array<TTool> = [
   {
     name: "raid.report",
     url: "https://raid.report",
-    image: "/images/raid.report.png",
+    image: { src: "/images/raid.report.png", width: 700, height: 552 },
     description: "Show raid completions and stats",
     requiresLogin: false,
     additionalLinks: [
@@ -153,7 +153,7 @@ export const tools: Array<TTool> = [
     name: "TodayInDestiny",
     url: "https://todayindestiny.com/",
     description: "What should we do today Guardian?",
-    image: "/images/todayindestiny.png",
+    image: { src: "/images/todayindestiny.png", width: 700, height: 552 },
     requiresLogin: false,
     additionalLinks: [
       "https://www.patreon.com/todayindestiny",
@@ -163,7 +163,7 @@ export const tools: Array<TTool> = [
   {
     name: "Where is Xur?",
     url: "https://whereisxur.com/",
-    image: "/images/whereisxur.png",
+    image: { src: "/images/whereisxur.png", width: 700, height: 552 },
     description: 'Nobody ever asks "How is Xur?"',
     requiresLogin: false,
     additionalLinks: [
@@ -176,7 +176,7 @@ export const tools: Array<TTool> = [
   {
     name: "bungie.net",
     url: "https://www.bungie.net/7",
-    image: "/images/bungie.png",
+    image: { src: "/images/bungie.png", width: 700, height: 527 },
     description: "the home of destiny 2",
     requiresLogin: true,
     additionalLinks: [
