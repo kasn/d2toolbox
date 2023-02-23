@@ -45,14 +45,12 @@ export default function Home() {
               <p className="mt-6 whitespace-normal text-xl leading-8 text-gray-600 dark:text-white lg:text-center">
                 A list of valuable resources for every Guardian.
               </p>
-              <p>
-                <p className="text mt-6 whitespace-normal leading-8 text-gray-600 dark:text-white">
-                  Destiny 2 is an enourmous game that can be overwhelming for
-                  new players.
-                  <br />
-                  We aim to create an exhaustive list of all the tools that will
-                  help to make the most out of the game.
-                </p>
+              <p className="text mt-6 whitespace-normal leading-8 text-gray-600 dark:text-white">
+                Destiny 2 is an enourmous game that can be overwhelming for new
+                players.
+                <br />
+                We aim to create an exhaustive list of all the tools that will
+                help to make the most out of the game.
               </p>
             </div>
           </div>

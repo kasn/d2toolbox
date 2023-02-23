@@ -25,7 +25,7 @@ function Tool({ tool }: ToolProps) {
       <p className="mt-3 text-base leading-7 text-gray-600 dark:text-white">
         {tool.description}
       </p>
-      {tool.additionalLinks ? (
+      {tool.additionalLinks && (
         <ul role="list" className="mt-3 flex gap-x-6">
           {tool.additionalLinks.map((link) => (
             <li key={link}>
@@ -40,7 +40,7 @@ function Tool({ tool }: ToolProps) {
             </li>
           ))}
         </ul>
-      ) : null}
+      )}
     </li>
   );
 }
