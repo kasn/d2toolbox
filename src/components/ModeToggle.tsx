@@ -20,7 +20,7 @@ function MoonIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   );
 }
 
-export function ModeToggle() {
+export default function ModeToggle() {
   function disableTransitionsTemporarily() {
     document.documentElement.classList.add("[&_*]:!transition-none");
     window.setTimeout(() => {

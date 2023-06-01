@@ -5,10 +5,10 @@ type ToolProps = {
   tool: TTool;
 };
 
-function Tool({ tool }: ToolProps) {
+export default function Tool({ tool }: ToolProps) {
   return (
     <li>
-      <h2 className="mb-3 text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-white">
+      <h2 className="mb-3 text-3xl font-bold leading-8 tracking-tight">
         <a href={tool.url} target="_blank" rel="noreferrer">
           {tool.name}
         </a>
@@ -44,5 +44,3 @@ function Tool({ tool }: ToolProps) {
     </li>
   );
 }
-
-export default Tool;
