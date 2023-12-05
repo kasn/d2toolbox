@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
+import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
 import Tool from "@/components/Tool";
 import { ModeToggle } from "@/components/ModeToggle";
