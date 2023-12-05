@@ -34,6 +34,7 @@ function Tool({ tool }: ToolProps) {
                 label={`${tool.name}`}
                 style={{ width: "25px", height: "25px" }}
                 bgColor="#ccc"
+                fgColor="#000"
                 rel="noopener noreferrer"
                 target="_blank"
               />

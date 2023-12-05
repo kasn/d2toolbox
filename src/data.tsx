@@ -161,6 +161,18 @@ export const tools: Array<TTool> = [
     ],
   },
   {
+    name: "Aegis Spreadsheets",
+    url: "https://drive.google.com/drive/folders/1AL3GM6rSSrm4LtSZeayxpSUsvSJdsiU3",
+    image: { src: "/images/aegis.png", width: 700, height: 527 },
+    description:
+      "Boss Damage, Boss Health and endgame analysis. Exhaustive and detailed breakdown of all possible damage numbers",
+    requiresLogin: false,
+    additionalLinks: [
+      "https://www.youtube.com/@TheAegisRelic",
+      "twitch.tv/TheAegisRelic",
+    ],
+  },
+  {
     name: "Where is Xur?",
     url: "https://whereisxur.com/",
     image: { src: "/images/whereisxur.png", width: 700, height: 552 },
