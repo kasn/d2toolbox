@@ -26,7 +26,7 @@ function Tool({ tool }: ToolProps) {
         {tool.description}
       </p>
       {tool.additionalLinks && (
-        <ul role="list" className="mt-3 flex gap-x-6">
+        <ul role="list" className="mt-3 flex gap-x-3">
           {tool.additionalLinks.map((link) => (
             <li key={link}>
               <SocialIcon
