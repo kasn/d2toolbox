@@ -41,6 +41,14 @@ const Footer = () => (
             className="fill:white/5"
           />
         </div>
+        <div className="mx-1 w-12">
+          <SocialIcon
+            url="https://kasn.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fill:white/5"
+          />
+        </div>
       </div>
     </div>
   </div>
