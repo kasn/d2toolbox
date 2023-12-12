@@ -1,5 +1,16 @@
 export const tools: Array<TTool> = [
   {
+    name: "Reminder",
+    url: "https://www.light.gg/db/items/472776702/starfarer-7m/",
+    image: { src: "/images/starfarer.png", width: 700, height: 527 },
+    requiresLogin: false,
+    description: (
+      <>
+        Equip the Starfarer 7M for extra dawning spirit
+      </>
+    ),
+  },
+  {
     name: "BRAYTECH",
     url: "https://bray.tech/",
     image: { src: "/images/braytech.png", width: 700, height: 527 },
