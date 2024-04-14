@@ -172,6 +172,18 @@ export const tools: Array<TTool> = [
     ],
   },
   {
+    name: "D2 Synergy",
+    url: "https://d2synergy.com/",
+    image: { src: "/images/d2synergy.png", width: 700, height: 552 },
+    description:
+      "Synergy groups progressions together and gives recommendations for optimal progression.",
+    requiresLogin: true,
+    additionalLinks: [
+      "https://github.com/dev-brendanprice/D2-Synergy",
+      "https://twitter.com/_brendanprice",
+    ],
+  },
+  {
     name: "Aegis Spreadsheets",
     url: "https://drive.google.com/drive/folders/1AL3GM6rSSrm4LtSZeayxpSUsvSJdsiU3",
     image: { src: "/images/aegis.png", width: 700, height: 527 },
