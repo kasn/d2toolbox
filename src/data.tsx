@@ -19,9 +19,10 @@ export const tools: Array<TTool> = [
       </>
     ),
     additionalLinks: [
-      "https://twitter.com/BraytechHelp",
+      "https://www.threads.net/@braytechapp",
       "https://discord.com/invite/8jESWWX",
       "https://www.patreon.com/braytech",
+      "https://www.paypal.com/paypalme/braytechltd",
     ],
     active: true,
   },
@@ -39,7 +40,7 @@ export const tools: Array<TTool> = [
       </>
     ),
     additionalLinks: [
-      "https://twitter.com/ThisIsDIM",
+      "https://mstdn.games/@ThisIsDIM",
       "https://www.reddit.com/r/DestinyItemManager/",
       "https://github.com/DestinyItemManager/DIM/",
       "https://discord.com/invite/UK2GWC7",
