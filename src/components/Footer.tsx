@@ -7,7 +7,7 @@ const Footer = () => (
       dark:text-white md:flex-row"
     >
       <div className="mt-2">
-        © Copyright 2024. All Rights Reserved.
+        © Copyright {new Date().getFullYear()}. All Rights Reserved.
         <br />
         Bungie Content © Bungie, Inc. All rights reserved. Destiny, the Destiny
         Logo, Bungie and the Bungie logo are among the trademarks of Bungie,
