@@ -9,4 +9,5 @@ type TTool = {
     height: number;
   };
   requiresLogin: boolean;
+  active: boolean;
 };

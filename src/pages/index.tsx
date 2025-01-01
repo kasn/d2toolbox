@@ -8,6 +8,8 @@ import { tools } from "../data";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const activeTools = tools.filter((tool) => tool.active);
+
 export default function Home() {
   return (
     <>
@@ -58,7 +60,7 @@ export default function Home() {
             role="list"
             className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-16 md:grid-cols-2 lg:col-span-2 lg:grid-cols-2 lg:gap-y-10 xl:col-span-3 xl:grid-cols-3 2xl:col-span-4 2xl:grid-cols-4 [&:not(:focus-visible)]:focus:outline-none"
           >
-            {tools.map((tool) => (
+            {activeTools.map((tool) => (
               <Tool key={tool.name} tool={tool} />
             ))}
           </ul>

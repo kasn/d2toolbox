@@ -5,6 +5,7 @@ export const tools: Array<TTool> = [
     image: { src: "/images/starfarer.png", width: 700, height: 527 },
     requiresLogin: false,
     description: <>Equip the Starfarer 7M for extra dawning spirit</>,
+    active: false,
   },
   {
     name: "BRAYTECH",
@@ -22,6 +23,7 @@ export const tools: Array<TTool> = [
       "https://discord.com/invite/8jESWWX",
       "https://www.patreon.com/braytech",
     ],
+    active: true,
   },
   {
     name: "Destiny Item Manager",
@@ -42,6 +44,7 @@ export const tools: Array<TTool> = [
       "https://github.com/DestinyItemManager/DIM/",
       "https://discord.com/invite/UK2GWC7",
     ],
+    active: true,
   },
   {
     name: "D2ArmorPicker",
@@ -55,6 +58,7 @@ export const tools: Array<TTool> = [
       "https://ko-fi.com/mijago",
       "https://discord.com/invite/7eFjeVbz2V",
     ],
+    active: true,
   },
   {
     name: "D2Checkpoint.com",
@@ -66,6 +70,7 @@ export const tools: Array<TTool> = [
       "https://discord.com/invite/d2checkpoint",
       "https://ko-fi.com/d2checkpoint",
     ],
+    active: true,
   },
   {
     name: "light.gg",
@@ -80,6 +85,7 @@ export const tools: Array<TTool> = [
       "https://www.light.gg/account/patreon",
       "https://www.youtube.com/c/lightggdb",
     ],
+    active: true,
   },
   {
     name: "engram.blue",
@@ -100,6 +106,7 @@ export const tools: Array<TTool> = [
       </>
     ),
     additionalLinks: ["https://discord.com/invite/Kfuqcw4msG"],
+    active: true,
   },
   {
     name: "Destiny Recipes",
@@ -113,6 +120,7 @@ export const tools: Array<TTool> = [
       "https://discord.com/invite/cX8R6wPRB8",
       "https://ko-fi.com/alanbalbo",
     ],
+    active: true,
   },
   {
     name: "D2 Checklist",
@@ -127,6 +135,7 @@ export const tools: Array<TTool> = [
       "https://twitter.com/D2Checklist",
       "https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=VBASBDZD7HAHS",
     ],
+    active: true,
   },
   {
     name: "Ishtar Collective",
@@ -143,6 +152,7 @@ export const tools: Array<TTool> = [
       "https://discord.com/invite/R33Wncn",
       "https://ishtar-collective.tumblr.com/",
     ],
+    active: true,
   },
   {
     name: "raid.report",
@@ -154,6 +164,7 @@ export const tools: Array<TTool> = [
       "https://twitter.com/RaidReport",
       "https://dungeon.report/",
     ],
+    active: true,
   },
 
   {
@@ -166,6 +177,7 @@ export const tools: Array<TTool> = [
       "https://www.patreon.com/todayindestiny",
       "https://ko-fi.com/JpDeathBlade",
     ],
+    active: true,
   },
   {
     name: "D2 Synergy",
@@ -178,6 +190,7 @@ export const tools: Array<TTool> = [
       "https://github.com/dev-brendanprice/D2-Synergy",
       "https://twitter.com/_brendanprice",
     ],
+    active: true,
   },
   {
     name: "Aegis Spreadsheets",
@@ -190,6 +203,7 @@ export const tools: Array<TTool> = [
       "https://www.youtube.com/@TheAegisRelic",
       "twitch.tv/TheAegisRelic",
     ],
+    active: true,
   },
   {
     name: "Where is Xur?",
@@ -203,6 +217,7 @@ export const tools: Array<TTool> = [
       "https://www.youtube.com/whereisxurnow",
       "https://discord.com/invite/ZgudXPZ",
     ],
+    active: true,
   },
   {
     name: "bungie.net",
@@ -214,5 +229,6 @@ export const tools: Array<TTool> = [
       "https://twitter.com/bungie",
       "https://twitter.com/destinythegame",
     ],
+    active: true,
   },
 ];
