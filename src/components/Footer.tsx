@@ -28,7 +28,7 @@ const Footer = () => (
       <div className="mt-2 flex flex-row md:flex-auto md:flex-row-reverse">
         <div className="mx-1 w-12">
           <SocialIcon
-            url="https://twitter.com/kasn"
+            url="https://bsky.app/profile/kasn.dev"
             target="_blank"
             rel="noopener noreferrer"
           />
