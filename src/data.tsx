@@ -89,6 +89,19 @@ export const tools: Array<TTool> = [
     active: true,
   },
   {
+    name: "Foundry",
+    url: "https://d2foundry.gg/",
+    image: { src: "/images/d2foundry.png", width: 700, height: 472 },
+    requiresLogin: true,
+    description: "Your companion to Destiny 2 weapons and perks.",
+    active: true,
+    additionalLinks: [
+      "https://bsky.app/profile/gothfem.me",
+      "https://discord.com/invite/dzW2DZBBQH",
+      "https://ko-fi.com/gothfemme",
+    ],
+  },
+  {
     name: "engram.blue",
     url: "https://engram.blue/",
     image: { src: "/images/engram.blue.png", width: 700, height: 552 },
