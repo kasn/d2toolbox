@@ -251,7 +251,7 @@ export const tools: Array<TTool> = [
     name: "Where is Xur?",
     url: "https://whereisxur.com/",
     image: { src: "/images/whereisxur.png", width: 700, height: 552 },
-    description: <>Nobody ever asks "How is Xur?"</>,
+    description: <>Nobody ever asks &ldquo;How is Xur?&rdquo;</>,
     requiresLogin: false,
     additionalLinks: [
       "https://twitter.com/xurwatchlive",

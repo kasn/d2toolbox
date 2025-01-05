@@ -1,17 +1,6 @@
 import Image, { getImageProps } from "next/image";
 import { SocialIcon } from "react-social-icons";
 
-function getBackgroundImage(srcSet = "") {
-  const imageSet = srcSet
-    .split(", ")
-    .map((str) => {
-      const [url, dpi] = str.split(" ");
-      return `url("${url}") ${dpi}`;
-    })
-    .join(", ");
-  return `image-set(${imageSet})`;
-}
-
 type ToolProps = {
   tool: TTool;
 };
@@ -26,11 +15,6 @@ function Tool({ tool }: ToolProps) {
     src: tool.image.src,
   });
 
-  // const backgroundImage = getBackgroundImage(src);
-  console.log(src);
-  const style = {
-    backgroundImage: `url(${src})`,
-  };
   return (
     <li>
       <a href={tool.url} target="_blank" rel="noreferrer"></a>
@@ -39,7 +23,9 @@ function Tool({ tool }: ToolProps) {
         target="_blank"
         rel="noreferrer"
         className="aspect-[5/4] w-full rounded-xl object-cover shadow-lg bg-cover block relative"
-        style={style}
+        style={{
+          backgroundImage: `url(${src})`,
+        }}
       >
         <h2 className="text-3xl font-bold leading-8 tracking-tight text-white p-6 top-0 left-0 right-0 absolute bg-gradient-to-t from-transparent to-zinc-900 rounded-xl">
           {tool.name}
