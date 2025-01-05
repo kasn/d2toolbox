@@ -51,8 +51,14 @@ export const tools: Array<TTool> = [
     name: "D2ArmorPicker",
     url: "https://d2armorpicker.com/#/",
     image: { src: "/images/d2armorpicker.png", width: 700, height: 552 },
-    description:
-      "D2ArmorPicker (or short D2AP) is a small web-app to quickly find armor that fits your desired stat requirements. It uses the armor in your vault, inventory and postmaster, calculates every possible variation and shows only those that fulfill the given requirements.",
+    description: (
+      <>
+        D2ArmorPicker (or short D2AP) is a small web-app to quickly find armor
+        that fits your desired stat requirements. It uses the armor in your
+        vault, inventory and postmaster, calculates every possible variation and
+        shows only those that fulfill the given requirements.
+      </>
+    ),
     requiresLogin: true,
     additionalLinks: [
       "https://twitter.com/MijagoCoding/",
@@ -78,8 +84,9 @@ export const tools: Array<TTool> = [
     url: "https://www.light.gg/",
     image: { src: "/images/light.gg.png", width: 700, height: 552 },
     requiresLogin: false,
-    description:
-      "home of the most powerful Destiny 2 Database & Tools on the Internet",
+    description: (
+      <>home of the most powerful Destiny 2 Database & Tools on the Internet</>
+    ),
     additionalLinks: [
       "https://twitter.com/lightdotgg",
       "https://discord.com/invite/pmHRd5U",
@@ -93,7 +100,7 @@ export const tools: Array<TTool> = [
     url: "https://d2foundry.gg/",
     image: { src: "/images/d2foundry.png", width: 700, height: 472 },
     requiresLogin: true,
-    description: "Your companion to Destiny 2 weapons and perks.",
+    description: <>Your companion to Destiny 2 weapons and perks.</>,
     active: true,
     additionalLinks: [
       "https://bsky.app/profile/gothfem.me",
@@ -124,8 +131,12 @@ export const tools: Array<TTool> = [
   },
   {
     name: "Destiny Recipes",
-    description:
-      "You can find here a list of helpful tools for Destiny 2. I like to call them recipes for success.",
+    description: (
+      <>
+        You can find here a list of helpful tools for Destiny 2. I like to call
+        them recipes for success.
+      </>
+    ),
     url: "https://destinyrecipes.com/",
     requiresLogin: true,
     image: { src: "/images/destinyrecipes.png", width: 700, height: 627 },
@@ -141,8 +152,12 @@ export const tools: Array<TTool> = [
     url: "https://www.d2checklist.com/",
     image: { src: "/images/d2checklist.png", width: 700, height: 627 },
     requiresLogin: true,
-    description:
-      "D2Checklist uses the Bungie API to help make achieving your goals in Destiny easier and more fun.",
+    description: (
+      <>
+        D2Checklist uses the Bungie API to help make achieving your goals in
+        Destiny easier and more fun.
+      </>
+    ),
     additionalLinks: [
       "https://www.reddit.com/r/destinychecklistnet/",
       "https://github.com/dcaslin/d2-checklist/",
@@ -156,8 +171,13 @@ export const tools: Array<TTool> = [
     url: "https://www.ishtar-collective.net/",
     image: { src: "/images/ishtar-collective.png", width: 700, height: 527 },
     requiresLogin: false,
-    description:
-      "Our goal is to collect, organize and summarize any information that could be useful to the research being carried out by Ishtar Collective personnel.",
+    description: (
+      <>
+        Our goal is to collect, organize and summarize any information that
+        could be useful to the research being carried out by Ishtar Collective
+        personnel.
+      </>
+    ),
     additionalLinks: [
       "https://twitter.com/IshtarColl",
       "https://www.patreon.com/ishtarcollective",
@@ -172,7 +192,7 @@ export const tools: Array<TTool> = [
     name: "raid.report",
     url: "https://raid.report",
     image: { src: "/images/raid.report.png", width: 700, height: 552 },
-    description: "Show raid completions and stats",
+    description: <>Show raid completions and stats</>,
     requiresLogin: false,
     additionalLinks: [
       "https://twitter.com/RaidReport",
@@ -184,7 +204,7 @@ export const tools: Array<TTool> = [
   {
     name: "TodayInDestiny",
     url: "https://todayindestiny.com/",
-    description: "What should we do today Guardian?",
+    description: <>What should we do today Guardian?</>,
     image: { src: "/images/todayindestiny.png", width: 700, height: 552 },
     requiresLogin: false,
     additionalLinks: [
@@ -197,8 +217,12 @@ export const tools: Array<TTool> = [
     name: "D2 Synergy",
     url: "https://d2synergy.com/",
     image: { src: "/images/d2synergy.png", width: 700, height: 552 },
-    description:
-      "Synergy groups progressions together and gives recommendations for optimal progression.",
+    description: (
+      <>
+        Synergy groups progressions together and gives recommendations for
+        optimal progression.
+      </>
+    ),
     requiresLogin: true,
     additionalLinks: [
       "https://github.com/dev-brendanprice/D2-Synergy",
@@ -210,8 +234,12 @@ export const tools: Array<TTool> = [
     name: "Aegis Spreadsheets",
     url: "https://drive.google.com/drive/folders/1AL3GM6rSSrm4LtSZeayxpSUsvSJdsiU3",
     image: { src: "/images/aegis.png", width: 700, height: 527 },
-    description:
-      "Boss Damage, Boss Health and endgame analysis. Exhaustive and detailed breakdown of all possible damage numbers",
+    description: (
+      <>
+        Boss Damage, Boss Health and endgame analysis. Exhaustive and detailed
+        breakdown of all possible damage numbers
+      </>
+    ),
     requiresLogin: false,
     additionalLinks: [
       "https://www.youtube.com/@TheAegisRelic",
@@ -223,7 +251,7 @@ export const tools: Array<TTool> = [
     name: "Where is Xur?",
     url: "https://whereisxur.com/",
     image: { src: "/images/whereisxur.png", width: 700, height: 552 },
-    description: 'Nobody ever asks "How is Xur?"',
+    description: <>Nobody ever asks "How is Xur?"</>,
     requiresLogin: false,
     additionalLinks: [
       "https://twitter.com/xurwatchlive",
@@ -237,7 +265,7 @@ export const tools: Array<TTool> = [
     name: "bungie.net",
     url: "https://www.bungie.net/7",
     image: { src: "/images/bungie.png", width: 700, height: 527 },
-    description: "the home of destiny 2",
+    description: <>the home of Destiny2</>,
     requiresLogin: true,
     additionalLinks: [
       "https://twitter.com/bungie",

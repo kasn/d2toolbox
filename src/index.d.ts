@@ -1,7 +1,7 @@
 type TTool = {
   name: string;
   url: string;
-  description: ReactElement | string;
+  description: ReactElement;
   additionalLinks?: Array<string>;
   image: {
     src: string;
