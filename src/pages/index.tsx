@@ -35,13 +35,13 @@ export default function Home() {
           </div>
         </header>
 
-        <div className="m-14 grid grid-cols-1 items-start gap-y-8 gap-x-8 sm:mt-16 sm:gap-y-16 lg:mt-24 lg:grid-cols-3 lg:gap-y-10 xl:grid-cols-4">
+        <div className="m-14 grid grid-cols-1 items-start gap-x-8 gap-y-8 sm:mt-16 sm:gap-y-16 lg:mt-24 lg:grid-cols-3 lg:gap-y-10 xl:grid-cols-4">
           <div className="mx-auto grid auto-cols-auto grid-flow-col justify-start gap-x-8 gap-y-10 whitespace-nowrap px-4 sm:max-w-2xl sm:grid-cols-1 sm:px-0 lg:grid-flow-row lg:grid-cols-1">
             <div>
               <div className="flex items-center justify-center">
                 <DestinyIcon className="h-28 w-28 fill-gray-900 dark:fill-white" />
               </div>
-              <h2 className="mt-6 whitespace-normal text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-center ">
+              <h2 className="mt-6 whitespace-normal text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-center">
                 Destiny 2 Tools
               </h2>
               <p className="mt-6 whitespace-normal text-xl leading-8 text-gray-600 dark:text-white lg:text-center">

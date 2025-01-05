@@ -22,16 +22,17 @@ function Tool({ tool }: ToolProps) {
         href={tool.url}
         target="_blank"
         rel="noreferrer"
-        className="aspect-[5/4] w-full rounded-t-2xl object-cover shadow-lg bg-cover block"
+        className="block aspect-[5/4] w-full rounded-t-2xl bg-cover object-cover shadow-lg"
         style={{
           backgroundImage: `url(${src})`,
         }}
       >
-        <h2 className="text-3xl font-bold leading-8 tracking-tight text-white px-6 pt-3 top-0 left-0 right-0 bg-gradient-to-t from-transparent to-zinc-900 rounded-xl pb-10">
+        <h2 className="left-0 right-0 top-0 rounded-xl bg-gradient-to-t from-transparent to-zinc-900 px-6 pb-10 pt-3 text-3xl font-bold leading-8 tracking-tight text-white">
           {tool.name}
         </h2>
       </a>
-      <p className="m-3  dark:text-white">{tool.description}</p>
+
+      <p className="m-3 dark:text-white">{tool.description}</p>
 
       {tool.additionalLinks && (
         <ul role="list" className="m-3 flex gap-x-3">

@@ -2,10 +2,7 @@ import { SocialIcon } from "react-social-icons";
 
 const Footer = () => (
   <div className="mt-5 bg-gray-100 pt-2 dark:bg-white/5">
-    <div
-      className="m-auto flex max-w-6xl flex-col px-3 pb-5 pt-5 text-sm text-gray-800
-      dark:text-white md:flex-row"
-    >
+    <div className="m-auto flex max-w-6xl flex-col px-3 pb-5 pt-5 text-sm text-gray-800 dark:text-white md:flex-row">
       <div className="mt-2">
         © Copyright {new Date().getFullYear()}. All Rights Reserved.
         <br />
