@@ -16,7 +16,7 @@ function Tool({ tool }: ToolProps) {
   });
 
   return (
-    <li className="border-white/7.5 relative rounded-2xl border pb-7 shadow-lg dark:border-0">
+    <li className="border-white/7.5 dark:border-1 relative rounded-2xl border pb-7 shadow-lg dark:border-zinc-900">
       <a href={tool.url} target="_blank" rel="noreferrer"></a>
       <a
         href={tool.url}
