@@ -16,7 +16,7 @@ function Tool({ tool }: ToolProps) {
   });
 
   return (
-    <li className="rounded-2xl shadow-lg">
+    <li className="border-white/7.5 dark:border-1 relative rounded-2xl border pb-7 shadow-lg dark:border-zinc-900">
       <a href={tool.url} target="_blank" rel="noreferrer"></a>
       <a
         href={tool.url}
@@ -35,7 +35,7 @@ function Tool({ tool }: ToolProps) {
       <p className="m-3 dark:text-white">{tool.description}</p>
 
       {tool.additionalLinks && (
-        <ul role="list" className="m-3 flex gap-x-3">
+        <ul role="list" className="absolute bottom-0 right-0 m-3 flex gap-x-3">
           {tool.additionalLinks.map((link) => (
             <li key={link}>
               <SocialIcon
