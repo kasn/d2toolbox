@@ -1,12 +1,9 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
 import Tool from "@/components/Tool";
 import { ModeToggle } from "@/components/ModeToggle";
 import DestinyIcon from "@/components/DestinyIcon";
 import { tools } from "../data";
-
-const inter = Inter({ subsets: ["latin"] });
 
 const activeTools = tools.filter((tool) => tool.active);
 
