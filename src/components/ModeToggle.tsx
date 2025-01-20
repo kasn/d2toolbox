@@ -1,4 +1,4 @@
-import { SVGProps } from "react";
+import { SVGProps, type JSX } from "react";
 
 function SunIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
