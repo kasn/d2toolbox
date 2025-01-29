@@ -17,6 +17,8 @@ const Footer = () => (
       <div>
         © Copyright {new Date().getFullYear()}. All Rights Reserved.
         <br />
+        Not affiliated with Bungie, Inc. or Sony Interactive Entertainment (SIE)
+        <br />
         Bungie Content © Bungie, Inc. All rights reserved. Destiny, the Destiny
         Logo, Bungie and the Bungie logo are among the trademarks of Bungie,
         Inc.
