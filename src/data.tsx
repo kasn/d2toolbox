@@ -200,6 +200,20 @@ export const tools: Array<TTool> = [
     ],
     active: true,
   },
+  {
+    name: "D2 Lost Sector Report",
+    url: "https://d2lostsector.report/",
+    image: { src: "/images/lostsectorreport.png", width: 700, height: 530 },
+    description: <>Your daily Destiny 2 Expert & Master Lost Sector report. </>,
+    requiresLogin: false,
+    additionalLinks: [
+      "https://bsky.app/profile/d2lostsector.report",
+      "https://twitter.com/D2LostSector",
+      "https://www.twitch.tv/d2lostsector",
+      "https://discord.com/invite/d2-lost-sector-report-975760471577722920",
+    ],
+    active: true,
+  },
 
   {
     name: "TodayInDestiny",
