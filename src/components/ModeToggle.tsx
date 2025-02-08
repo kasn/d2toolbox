@@ -1,4 +1,7 @@
-import { SVGProps, type JSX } from "react";
+"use client";
+
+import { useTheme } from "next-themes";
+import { SVGProps, useEffect, useState, type JSX } from "react";
 
 function SunIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
@@ -20,34 +23,16 @@ function MoonIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   );
 }
 
-function disableTransitionsTemporarily() {
-  document.documentElement.classList.add("**:transition-none!");
-  window.setTimeout(() => {
-    document.documentElement.classList.remove("**:transition-none!");
-  }, 0);
-}
-
-function toggleMode() {
-  disableTransitionsTemporarily();
-
-  let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-  let isSystemDarkMode = darkModeMediaQuery.matches;
-  let isDarkMode = document.documentElement.classList.toggle("dark");
-
-  if (isDarkMode === isSystemDarkMode) {
-    delete window.localStorage.isDarkMode;
-  } else {
-    window.localStorage.isDarkMode = isDarkMode;
-  }
-}
-
 export function ModeToggle() {
+  let { resolvedTheme, setTheme } = useTheme();
+  let otherTheme = resolvedTheme === "dark" ? "light" : "dark";
+
   return (
     <button
       type="button"
       className="flex h-7 w-7 items-center justify-center rounded-md transition hover:bg-zinc-900/5 dark:hover:bg-white/5"
       aria-label="Toggle dark mode"
-      onClick={toggleMode}
+      onClick={() => setTheme(otherTheme)}
     >
       <SunIcon className="h-7 w-7 stroke-zinc-900 dark:hidden" />
       <MoonIcon className="hidden h-7 w-7 stroke-white dark:block" />
