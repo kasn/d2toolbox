@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   webpack: (
     config,
-    { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }
+    { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack },
   ) => {
     config.module.rules.push({
       test: /\.svg$/,
@@ -12,8 +12,15 @@ const nextConfig: NextConfig = {
     });
     return config;
   },
+  async redirects() {
+    return [
+      {
+        source: "/sundering-doctrine",
+        destination: "/sundered-doctrine",
+        permanent: true,
+      },
+    ];
+  },
 };
-
-module.exports = nextConfig;
 
 export default nextConfig;
