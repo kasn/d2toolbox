@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import { SocialIcon } from "react-social-icons";
 
 type ToolProps = {
@@ -6,27 +6,36 @@ type ToolProps = {
 };
 
 function Tool({ tool }: ToolProps) {
+  const {
+    props: { src },
+  } = getImageProps({
+    alt: "",
+    width: tool.image.width,
+    height: tool.image.height,
+    src: tool.image.src,
+  });
+
   return (
-    <li>
-      <h2 className="mb-3 text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-white">
-        <a href={tool.url} target="_blank" rel="noreferrer">
+    <li className="border-white/7.5 dark:border-1 relative rounded-2xl border pb-7 shadow-lg dark:border-zinc-900">
+      <a href={tool.url} target="_blank" rel="noreferrer"></a>
+      <a
+        href={tool.url}
+        target="_blank"
+        rel="noreferrer"
+        className="block aspect-5/4 w-full rounded-t-2xl bg-cover object-cover shadow-lg"
+        style={{
+          backgroundImage: `url(${src})`,
+        }}
+      >
+        <h2 className="left-0 right-0 top-0 rounded-xl bg-linear-to-t from-transparent to-zinc-900 px-6 pb-10 pt-3 text-3xl font-bold leading-8 tracking-tight text-white">
           {tool.name}
-        </a>
-      </h2>
-      <a href={tool.url} target="_blank" rel="noreferrer">
-        <Image
-          alt={tool.name}
-          className="aspect-[5/4] w-full rounded-xl object-cover shadow-lg"
-          src={tool.image.src}
-          width={tool.image.width}
-          height={tool.image.height}
-        />
+        </h2>
       </a>
-      <p className="mt-3 text-base leading-7 text-gray-600 dark:text-white">
-        {tool.description}
-      </p>
+
+      <p className="m-3 dark:text-white">{tool.description}</p>
+
       {tool.additionalLinks && (
-        <ul role="list" className="mt-3 flex gap-x-3">
+        <ul role="list" className="absolute bottom-0 right-0 m-3 flex gap-x-3">
           {tool.additionalLinks.map((link) => (
             <li key={link}>
               <SocialIcon

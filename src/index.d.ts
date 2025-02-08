@@ -1,7 +1,7 @@
 type TTool = {
   name: string;
   url: string;
-  description: ReactElement | string;
+  description: ReactElement<any>;
   additionalLinks?: Array<string>;
   image: {
     src: string;
@@ -9,4 +9,5 @@ type TTool = {
     height: number;
   };
   requiresLogin: boolean;
+  active: boolean;
 };
