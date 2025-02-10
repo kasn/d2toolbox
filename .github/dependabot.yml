@@ -13,3 +13,4 @@ updates:
       tailwind:
         patterns:
           - "tailwind*"
+          - "@tailwindcss/*"
