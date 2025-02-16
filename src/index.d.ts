@@ -1,3 +1,5 @@
+import type { StaticImageData } from "next/image";
+
 type TTool = {
   name: string;
   url: string;
@@ -10,4 +12,10 @@ type TTool = {
   };
   requiresLogin: boolean;
   active: boolean;
+};
+
+type TSymbol = {
+  id: string;
+  name: string;
+  icon: StaticImageData;
 };
