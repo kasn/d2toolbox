@@ -11,3 +11,9 @@ type TTool = {
   requiresLogin: boolean;
   active: boolean;
 };
+
+type TSymbol = {
+  id: string;
+  name: string;
+  icon: StaticImageData;
+};
