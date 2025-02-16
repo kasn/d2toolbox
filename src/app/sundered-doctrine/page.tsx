@@ -40,7 +40,7 @@ export default function SunderingDoctrine() {
             <h2 className="m-3 text-xl dark:text-white">Riddle</h2>
           </AccordionTrigger>
           <AccordionContent className="px-4">
-            <img src="/images/sd/IMG_5098.PNG" alt="" />
+            <img src="/images/sd/IMG_5098.PNG" alt="" width={1000} />
             <span className="text-right">
               map made by{" "}
               <a href="https://www.youtube.com/c/FalloutPlays">Fallout Plays</a>
