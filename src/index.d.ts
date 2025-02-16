@@ -1,5 +1,3 @@
-import type { StaticImageData } from "next/image";
-
 type TTool = {
   name: string;
   url: string;
