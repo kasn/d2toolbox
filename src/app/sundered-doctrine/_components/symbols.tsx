@@ -1,4 +1,3 @@
-import { TSymbol } from "@/index";
 import ascendantPlane from "../_assets/symbols/ascendant-plane.png";
 import blackGarden from "../_assets/symbols/black-garden.png";
 import blackHeart from "../_assets/symbols/black-heart.png";
