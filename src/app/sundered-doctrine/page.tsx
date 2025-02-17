@@ -7,6 +7,8 @@ import {
 
 import Image from "next/image";
 import symbols from "./_components/symbols";
+import allpaths from "./_assets/riddle-all.png";
+import kerrev from "./_assets/kerrev.png";
 
 const subject = [
   "witness",
@@ -75,10 +77,12 @@ export default function SunderingDoctrine() {
             <h2 className="m-3 text-xl dark:text-white">Riddle</h2>
           </AccordionTrigger>
           <AccordionContent className="px-4">
-            <img src="/images/sd/IMG_5098.PNG" alt="" width={1000} />
+            <Image src={allpaths} alt="all paths" width={1000} />
             <span className="text-right">
               map made by{" "}
-              <a href="https://www.youtube.com/c/FalloutPlays">Fallout Plays</a>
+              <a href="https://www.reddit.com/r/raidsecrets/comments/1ikwarh/sundered_doctrine_1st_encounter_map/">
+                CyanicKenshi
+              </a>
             </span>
           </AccordionContent>
         </AccordionItem>
@@ -87,7 +91,7 @@ export default function SunderingDoctrine() {
             <h2 className="m-3 text-xl dark:text-white">Kerrev the Erased</h2>
           </AccordionTrigger>
           <AccordionContent className="px-4">
-            <img src="/images/sd/IMG_5097.PNG" alt="" width={1000} />
+            <Image src={kerrev} alt="Kerrev the Erased" width={1000} />
             <span className="text-right">map made by DIGIPHOENIX</span>
           </AccordionContent>
         </AccordionItem>

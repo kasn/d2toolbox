@@ -22,7 +22,7 @@ function Tool({ tool }: ToolProps) {
         href={tool.url}
         target="_blank"
         rel="noreferrer"
-        className="aspect-5/4 block w-full rounded-t-2xl bg-cover object-cover shadow-lg"
+        className="aspect-5/4 block w-full rounded-t-2xl bg-cover bg-center object-cover shadow-lg"
         style={{
           backgroundImage: `url(${src})`,
         }}
