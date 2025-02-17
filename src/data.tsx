@@ -8,6 +8,14 @@ export const tools: Array<TTool> = [
     active: false,
   },
   {
+    name: "Sundered Doctrine",
+    url: "/sundered-doctrine",
+    image: { src: "/images/sundered-doctrine.jpg", width: 700, height: 552 },
+    requiresLogin: false,
+    description: <>Sundered Doctrine Resources</>,
+    active: true,
+  },
+  {
     name: "BRAYTECH",
     url: "https://bray.tech/",
     image: { src: "/images/braytech.png", width: 700, height: 527 },
