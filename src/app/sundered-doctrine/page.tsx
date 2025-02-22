@@ -15,7 +15,9 @@ import { Truths } from "./_components/truths";
 export default function SunderingDoctrine() {
   return (
     <article className="not-focus-visible:focus:outline-hidden m-14 mt-20">
-      <h1 className="m-3 text-2xl dark:text-white">Sundered Doctrine</h1>
+      <h1 className="m-3 text-5xl font-black dark:text-white">
+        Sundered Doctrine
+      </h1>
 
       <Truths />
 
