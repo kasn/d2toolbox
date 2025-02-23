@@ -1,3 +1,14 @@
+type categories =
+  | "inventory"
+  | "statistics"
+  | "analysis"
+  | "progress"
+  | "lore"
+  | "misc"
+  | "community"
+  | "data"
+  | "tools";
+
 type TTool = {
   name: string;
   url: string;
@@ -10,6 +21,7 @@ type TTool = {
   };
   requiresLogin: boolean;
   active: boolean;
+  category?: categories[];
 };
 
 type TSymbol = {

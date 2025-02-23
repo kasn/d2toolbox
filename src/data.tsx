@@ -33,6 +33,7 @@ export const tools: Array<TTool> = [
       "https://www.paypal.com/paypalme/braytechltd",
     ],
     active: true,
+    category: ["inventory", "statistics", "progress", "lore"],
   },
   {
     name: "Destiny Item Manager",
@@ -54,6 +55,7 @@ export const tools: Array<TTool> = [
       "https://discord.com/invite/UK2GWC7",
     ],
     active: true,
+    category: ["inventory", "progress"],
   },
   {
     name: "D2ArmorPicker",
@@ -74,6 +76,7 @@ export const tools: Array<TTool> = [
       "https://discord.com/invite/7eFjeVbz2V",
     ],
     active: true,
+    category: ["inventory"],
   },
   {
     name: "D2Checkpoint.com",
@@ -86,6 +89,7 @@ export const tools: Array<TTool> = [
       "https://ko-fi.com/d2checkpoint",
     ],
     active: true,
+    category: ["community"],
   },
   {
     name: "light.gg",
@@ -102,6 +106,7 @@ export const tools: Array<TTool> = [
       "https://www.youtube.com/c/lightggdb",
     ],
     active: true,
+    category: ["analysis", "statistics", "community", "data"],
   },
   {
     name: "Foundry",
@@ -115,6 +120,7 @@ export const tools: Array<TTool> = [
       "https://discord.com/invite/dzW2DZBBQH",
       "https://ko-fi.com/gothfemme",
     ],
+    category: ["analysis", "statistics", "community", "data"],
   },
   {
     name: "engram.blue",
@@ -136,6 +142,7 @@ export const tools: Array<TTool> = [
     ),
     additionalLinks: ["https://discord.com/invite/Kfuqcw4msG"],
     active: true,
+    category: ["analysis", "tools"],
   },
   {
     name: "Destiny Recipes",
@@ -154,6 +161,7 @@ export const tools: Array<TTool> = [
       "https://ko-fi.com/alanbalbo",
     ],
     active: true,
+    category: ["analysis", "tools"],
   },
   {
     name: "D2 Checklist",
@@ -173,6 +181,7 @@ export const tools: Array<TTool> = [
       "https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=VBASBDZD7HAHS",
     ],
     active: true,
+    category: ["analysis", "tools"],
   },
   {
     name: "Ishtar Collective",
@@ -195,6 +204,7 @@ export const tools: Array<TTool> = [
       "https://ishtar-collective.tumblr.com/",
     ],
     active: true,
+    category: ["lore", "data"],
   },
   {
     name: "raid.report",
@@ -207,6 +217,7 @@ export const tools: Array<TTool> = [
       "https://dungeon.report/",
     ],
     active: true,
+    category: ["statistics", "community", "progress"],
   },
   {
     name: "D2 Lost Sector Report",
@@ -221,6 +232,7 @@ export const tools: Array<TTool> = [
       "https://discord.com/invite/d2-lost-sector-report-975760471577722920",
     ],
     active: true,
+    category: ["statistics", "community", "progress"],
   },
 
   {
@@ -234,6 +246,7 @@ export const tools: Array<TTool> = [
       "https://ko-fi.com/JpDeathBlade",
     ],
     active: true,
+    category: ["statistics", "community", "progress", "tools"],
   },
   {
     name: "D2 Synergy",
@@ -251,6 +264,7 @@ export const tools: Array<TTool> = [
       "https://twitter.com/_brendanprice",
     ],
     active: true,
+    category: ["progress", "tools"],
   },
   {
     name: "Aegis Spreadsheets",
@@ -268,6 +282,7 @@ export const tools: Array<TTool> = [
       "twitch.tv/TheAegisRelic",
     ],
     active: true,
+    category: ["analysis", "data"],
   },
   {
     name: "Where is Xur?",
@@ -282,6 +297,7 @@ export const tools: Array<TTool> = [
       "https://discord.com/invite/ZgudXPZ",
     ],
     active: true,
+    category: ["tools"],
   },
   {
     name: "bungie.net",
@@ -294,5 +310,6 @@ export const tools: Array<TTool> = [
       "https://twitter.com/destinythegame",
     ],
     active: true,
+    category: ["statistics", "community", "progress", "tools", "inventory"],
   },
 ];
