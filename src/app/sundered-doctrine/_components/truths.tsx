@@ -3,7 +3,7 @@
 import { useState } from "react";
 import symbols from "./symbols";
 import Image from "next/image";
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 
 const subject = [
   "witness",
@@ -83,7 +83,7 @@ export const Truths = () => {
                 className="mx-3 mb-1 max-w-24 text-wrap transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 <button
-                  className={clsx(
+                  className={cn(
                     "border-2",
                     selectable ? "cursor-pointer" : "cursor-default opacity-40",
                     selected.includes(symbol.id)

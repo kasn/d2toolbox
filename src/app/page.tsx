@@ -3,7 +3,7 @@
 import Tool from "@/components/Tool";
 import { tools } from "../data";
 import useLocalStorageState from "use-local-storage-state";
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 
 const activeTools = tools.filter((tool) => tool.active);
 const categories = tools.map((tool) => tool.category).flat();
@@ -24,11 +24,9 @@ export default function Index() {
           {uniqueCategories.map((category) => (
             <li key={category}>
               <button
-                className={clsx([
-                  "mr-4 inline-flex cursor-pointer items-center rounded-md px-4 py-2 text-sm font-medium shadow-2xl ring-1 ring-inset ring-gray-500/10 dark:text-white dark:ring-gray-400/20",
-                  filter.includes(category)
-                    ? "bg-blue-500 text-white dark:bg-blue-400"
-                    : "bg-gray-50 text-gray-600 hover:bg-gray-200 dark:bg-gray-400/10 dark:hover:bg-gray-400",
+                className={cn([
+                  "mr-4 inline-flex cursor-pointer items-center rounded-md px-4 py-2 text-sm font-medium shadow-2xl ring-1 ring-inset ring-gray-500/10 dark:text-white dark:ring-gray-400/20 bg-gray-50 text-gray-600 hover:bg-gray-200 dark:bg-gray-400/10 dark:hover:bg-gray-400",
+                  {"bg-blue-500 text-white dark:bg-blue-400 hover:bg-blue-600 dark:hover:bg-blue-600": filter.includes(category)}
                 ])}
                 onClick={() => {
                   if (filter.includes(category)) {
