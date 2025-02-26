@@ -28,15 +28,22 @@ const truths: [
   (typeof predicate)[number],
   (typeof subject)[number],
 ][] = [
-  ["traveller", "give", "guardian"],
-  ["traveller", "give", "light"],
-  ["pyramid", "give", "darkness"],
-  ["pyramid", "kill", "worm"],
   ["guardian", "kill", "witness"],
   ["guardian", "worship", "traveller"],
+  ["guardian", "worship", "light"],
+  ["hive", "worship", "worm"], 
+  ["hive", "worship", "darkness"],  
+  ["darkness", "stop", "savathun"],
+  ["traveller", "give", "guardian"],
+  ["traveller", "give", "light"],
   ["savathun", "stop", "pyramid"],
+  ["savathun", "stop", "darkness"],
+  ["pyramid", "give", "darkness"],
+  ["pyramid", "kill", "worm"],
+  ["pyramid", "drink", "worm"]
 ];
 
+type RelevantIds = Array<TSymbol["id"]>;
 const relevantHere = toSymbolId([...subject, ...predicate]);
 
 function canSelect(selected: TSymbol["id"][], symbol: TSymbol["id"]): boolean {
