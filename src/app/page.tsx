@@ -8,9 +8,7 @@ import clsx from "clsx";
 const activeTools = tools.filter((tool) => tool.active);
 const categories = tools.map((tool) => tool.category).flat();
 
-const uniqueCategories = [...new Set(categories)].filter(
-  Boolean,
-) as categories[]; // violently cast to categories[]
+const uniqueCategories = [...new Set(categories)];
 
 export default function Index() {
   const [filter, setFilter] = useLocalStorageState<categories[]>("filter", {
@@ -44,9 +42,11 @@ export default function Index() {
             </li>
           ))}
         </ul>
-        <button className="ml-2" onClick={() => setFilter([])}>
-          Clear
-        </button>
+        {filter.length > 0 ? (
+          <button className="ml-2" onClick={() => setFilter([])}>
+            Clear
+          </button>
+        ) : null}
       </div>
       <ul
         role="list"

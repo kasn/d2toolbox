@@ -21,7 +21,7 @@ type TTool = {
   };
   requiresLogin: boolean;
   active: boolean;
-  category?: categories[];
+  category: categories[];
 };
 
 type TSymbol = {

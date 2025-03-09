@@ -6,6 +6,7 @@ export const tools: Array<TTool> = [
     requiresLogin: false,
     description: <>Equip the Starfarer 7M for extra dawning spirit</>,
     active: false,
+    category: [],
   },
   {
     name: "Sundered Doctrine",
@@ -14,6 +15,7 @@ export const tools: Array<TTool> = [
     requiresLogin: false,
     description: <>Sundered Doctrine Resources</>,
     active: true,
+    category: [],
   },
   {
     name: "BRAYTECH",
