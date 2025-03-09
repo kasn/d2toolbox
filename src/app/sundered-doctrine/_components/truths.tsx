@@ -3,7 +3,7 @@
 import { useState } from "react";
 import symbols from "./symbols";
 import Image from "next/image";
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 
 const subject = [
   "witness",
@@ -28,15 +28,22 @@ const truths: [
   (typeof predicate)[number],
   (typeof subject)[number],
 ][] = [
-  ["traveller", "give", "guardian"],
-  ["traveller", "give", "light"],
-  ["pyramid", "give", "darkness"],
-  ["pyramid", "kill", "worm"],
   ["guardian", "kill", "witness"],
   ["guardian", "worship", "traveller"],
+  ["guardian", "worship", "light"],
+  ["hive", "worship", "worm"], 
+  ["hive", "worship", "darkness"],  
+  ["darkness", "stop", "savathun"],
+  ["traveller", "give", "guardian"],
+  ["traveller", "give", "light"],
   ["savathun", "stop", "pyramid"],
+  ["savathun", "stop", "darkness"],
+  ["pyramid", "give", "darkness"],
+  ["pyramid", "kill", "worm"],
+  ["pyramid", "drink", "worm"]
 ];
 
+type RelevantIds = Array<TSymbol["id"]>;
 const relevantHere = toSymbolId([...subject, ...predicate]);
 
 function canSelect(selected: TSymbol["id"][], symbol: TSymbol["id"]): boolean {
@@ -83,7 +90,7 @@ export const Truths = () => {
                 className="mx-3 mb-1 max-w-24 text-wrap transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 <button
-                  className={clsx(
+                  className={cn(
                     "border-2",
                     selectable ? "cursor-pointer" : "cursor-default opacity-40",
                     selected.includes(symbol.id)
