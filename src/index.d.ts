@@ -1,4 +1,4 @@
-type categories =
+type TCategories =
   | "inventory"
   | "statistics"
   | "analysis"
