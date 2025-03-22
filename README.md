@@ -2,8 +2,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+requirements: `pnpm` `node > 22`
 
 ```bash
-yarn dev
+pnpm install
+pnpm dev
 ```
