@@ -24,7 +24,7 @@ export default function Index() {
       />
       <ul
         role="list"
-        className="not-focus-visible:focus:outline-hidden m-14 mt-4 grid grid-cols-1 gap-x-8 gap-y-10 sm:gap-y-16 md:grid-cols-2 lg:grid-cols-3 lg:gap-y-10 2xl:grid-cols-4"
+        className="not-focus-visible:focus:outline-hidden mt-4 grid grid-cols-1 gap-x-8 gap-y-10 sm:gap-y-16 md:grid-cols-2 lg:grid-cols-3 lg:gap-y-10 2xl:grid-cols-4"
       >
         {activeTools
           .filter(

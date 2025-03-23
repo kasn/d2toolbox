@@ -43,7 +43,7 @@ export default function RootLayout({
                 <ModeToggle />
               </div>
             </header>
-            {children}
+            <div className="m-14 mt-20">{children}</div>
             <Footer />
           </main>
         </Providers>

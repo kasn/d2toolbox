@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --experimental-https --hostname 192.168.64.1",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -16,6 +16,7 @@
     "@types/react": "19.0.12",
     "@types/react-dom": "19.0.4",
     "@vercel/analytics": "^1.5.0",
+    "bungie-api-ts": "^5.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "eslint": "9.22.0",
@@ -27,6 +28,7 @@
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-social-icons": "^6.22.0",
+    "swr": "^2.3.3",
     "tailwind-merge": "^3.0.2",
     "tailwindcss": "^4.0.3",
     "tailwindcss-animate": "^1.0.7",
