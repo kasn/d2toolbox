@@ -14,7 +14,7 @@ import { Truths } from "./_components/truths";
 // glyph image source https://www.reddit.com/r/raidsecrets/comments/t7kea1/vow_callout_images_non_potato_quality/
 export default function SunderingDoctrine() {
   return (
-    <article className="not-focus-visible:focus:outline-hidden m-14 mt-20">
+    <article className="not-focus-visible:focus:outline-hidden">
       <h1 className="m-3 text-5xl font-black dark:text-white">
         Sundered Doctrine
       </h1>

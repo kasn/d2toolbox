@@ -8,7 +8,7 @@ type FilterProps = {
 
 export default function Filter({ filter, setFilter, categories }: FilterProps) {
   return (
-    <div className="mx-14 mt-20 flex items-center justify-between">
+    <div className="flex items-center justify-between">
       <ul className="flex flex-wrap">
         {categories.map((category) => (
           <li key={category}>
