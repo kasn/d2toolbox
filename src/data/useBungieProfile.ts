@@ -1,11 +1,10 @@
 // hooks/useBungieProfile.ts
 "use client";
 
-import useSWR from "swr";
-import { getProfile } from "bungie-api-ts/destiny2";
+import { useQuery } from "@tanstack/react-query";
+import { DestinyComponentType, getProfile } from "bungie-api-ts/destiny2";
 import { bungieHttpClient } from "@/lib/bungieHttpClient";
 import { BungieMembershipType } from "bungie-api-ts/common";
-import { use } from "react";
 
 const fetchProfile = async () => {
   const tokenRaw = localStorage.getItem("bungie_token");
@@ -20,22 +19,23 @@ const fetchProfile = async () => {
   return getProfile(bungieHttpClient, {
     destinyMembershipId: destiny_membership_id,
     membershipType: membership_type as BungieMembershipType,
-    components: [100],
+    components: [
+      DestinyComponentType.Profiles,
+      DestinyComponentType.Characters,
+    ],
   }).then((res) => res.Response);
 };
 
 export function useBungieProfile() {
-  console.log("useBungieProfile");
-
-  const { data, error, isLoading, mutate } = useSWR(
-    "bungie-profile",
-    fetchProfile,
-  );
+  const { data, error, isLoading } = useQuery({
+    queryKey: ["bungie-profile"],
+    queryFn: fetchProfile,
+    retry: false,
+  });
 
   return {
     profile: data,
     loading: isLoading,
     error,
-    refresh: mutate,
   };
 }
