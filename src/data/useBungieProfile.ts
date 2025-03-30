@@ -2,9 +2,9 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { DestinyComponentType, getProfile } from "bungie-api-ts/destiny2";
+import { getProfile } from "bungie-api-ts/destiny2";
 import { bungieHttpClient } from "@/lib/bungieHttpClient";
-import { BungieMembershipType } from "bungie-api-ts/common";
+import { type BungieMembershipType } from "bungie-api-ts/common";
 
 const fetchProfile = async () => {
   const tokenRaw = localStorage.getItem("bungie_token");
@@ -20,8 +20,8 @@ const fetchProfile = async () => {
     destinyMembershipId: destiny_membership_id,
     membershipType: membership_type as BungieMembershipType,
     components: [
-      DestinyComponentType.Profiles,
-      DestinyComponentType.Characters,
+      100, // DestinyComponentType.Profiles
+      200, // DestinyComponentType.Characters
     ],
   }).then((res) => res.Response);
 };

@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientConfig } from "bungie-api-ts/http";
+import { type HttpClient, type HttpClientConfig } from "bungie-api-ts/http";
 
 export const bungieHttpClient: HttpClient = async (
   config: HttpClientConfig,

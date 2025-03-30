@@ -1,4 +1,4 @@
-import { SVGProps, type JSX } from "react";
+import { type SVGProps, type JSX } from "react";
 
 function DestinyIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
