@@ -1,15 +1,7 @@
 "use client";
 
 import { useBungieProfile } from "@/data/useBungieProfile";
-
-const handleLogin = () => {
-  const params = new URLSearchParams({
-    client_id: process.env.NEXT_PUBLIC_BUNGIE_CLIENT_ID!,
-    response_type: "code",
-    redirect_uri: process.env.NEXT_PUBLIC_BUNGIE_REDIRECT_URI!,
-  });
-  window.location.href = `https://www.bungie.net/en/OAuth/Authorize?${params}`;
-};
+import handleLogin from "@/lib/auth/handleLogin";
 
 export default function LoginPage() {
   const { profile, loading, error } = useBungieProfile();
@@ -35,6 +27,4 @@ export default function LoginPage() {
       <pre>{JSON.stringify(profile, null, 2)}</pre>
     </div>
   );
-
-  return;
 }

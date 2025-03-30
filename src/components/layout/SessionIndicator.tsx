@@ -1,10 +1,30 @@
 "use client";
 
 import { useBungieProfile } from "@/data/useBungieProfile";
+import { useBungieSession } from "@/data/useBungieSession";
+import handleLogin from "@/lib/auth/handleLogin";
 import Link from "next/link";
 
 function SessionIndicator() {
-  const { profile, loading, error } = useBungieProfile();
+  const validSession = useBungieSession();
+
+  if (!validSession) {
+    return (
+      <div>
+        <button onClick={handleLogin}>Login</button>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <SessionIndicatorStatus />
+    </div>
+  );
+}
+
+function SessionIndicatorStatus() {
+  const { profile, loading } = useBungieProfile();
 
   if (loading) {
     return <div>Loading...</div>;
@@ -13,7 +33,7 @@ function SessionIndicator() {
   if (!profile) {
     return (
       <div>
-        <Link href={"/login"}>Login</Link>
+        <button onClick={handleLogin}>Login</button>
       </div>
     );
   }

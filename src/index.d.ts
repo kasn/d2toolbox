@@ -29,3 +29,12 @@ type TSymbol = {
   name: string;
   icon: StaticImageData;
 };
+
+type BungieToken = {
+  access_token: string;
+  refresh_token: string;
+  expires_in: number;
+  received_at: number; // epoch ms
+  destiny_membership_id: string;
+  membership_type: BungieMembershipType;
+};

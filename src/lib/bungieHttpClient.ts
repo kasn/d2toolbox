@@ -1,14 +1,10 @@
 import { type HttpClient, type HttpClientConfig } from "bungie-api-ts/http";
+import { getValidToken } from "@/lib/auth/getValidToken";
 
 export const bungieHttpClient: HttpClient = async (
   config: HttpClientConfig,
 ) => {
-  const tokenRaw = localStorage.getItem("bungie_token");
-  if (!tokenRaw) {
-    throw new Error("Not authenticated");
-  }
-
-  const { access_token } = JSON.parse(tokenRaw);
+  const token = await getValidToken();
 
   let url = new URL(config.url);
   if (config.params) {
@@ -28,7 +24,7 @@ export const bungieHttpClient: HttpClient = async (
   const res = await fetch(url.toString(), {
     method: config.method,
     headers: {
-      Authorization: `Bearer ${access_token}`,
+      Authorization: `Bearer ${token.access_token}`,
       "X-API-Key": process.env.NEXT_PUBLIC_BUNGIE_API_KEY!,
     },
     body: config.body,
