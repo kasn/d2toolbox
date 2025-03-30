@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { SVGProps, useEffect, useState, type JSX } from "react";
+import { type SVGProps, type JSX } from "react";
 
 function SunIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (

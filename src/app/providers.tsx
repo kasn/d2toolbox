@@ -3,6 +3,7 @@
 import { createContext, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { ThemeProvider, useTheme } from "next-themes";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 function usePrevious<T>(value: T) {
   let ref = useRef<T>(value);
@@ -13,6 +14,8 @@ function usePrevious<T>(value: T) {
 
   return ref.current;
 }
+
+const queryClient = new QueryClient();
 
 function ThemeWatcher() {
   let { resolvedTheme, setTheme } = useTheme();
@@ -47,8 +50,10 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <AppContext.Provider value={{ previousPathname }}>
       <ThemeProvider attribute="class" disableTransitionOnChange>
-        <ThemeWatcher />
-        {children}
+        <QueryClientProvider client={queryClient}>
+          <ThemeWatcher />
+          {children}
+        </QueryClientProvider>
       </ThemeProvider>
     </AppContext.Provider>
   );

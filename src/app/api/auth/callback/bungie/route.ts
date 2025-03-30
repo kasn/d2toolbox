@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const code = searchParams.get("code");
-  console.log({ URL: request.url });
+
   if (!code) {
     return NextResponse.redirect(new URL("/?error=missing_code", request.url));
   }
@@ -29,7 +29,7 @@ export async function GET(request: Request) {
   }
 
   const tokenData = await tokenRes.json();
-  console.log(tokenData);
+
   const redirectUrl = new URL("/login/capture", request.url);
   redirectUrl.hash = new URLSearchParams({
     access_token: tokenData.access_token,
@@ -37,6 +37,6 @@ export async function GET(request: Request) {
     expires_in: tokenData.expires_in.toString(),
     membership_id: tokenData.membership_id,
   }).toString();
-  console.log({ redirectUrl });
+
   return NextResponse.redirect(redirectUrl);
 }
