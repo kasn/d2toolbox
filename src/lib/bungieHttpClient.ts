@@ -24,7 +24,7 @@ export const bungieHttpClient: HttpClient = async (
     }
     url.search = searchParams.toString();
   }
-  console.log(url.toString());
+
   const res = await fetch(url.toString(), {
     method: config.method,
     headers: {
