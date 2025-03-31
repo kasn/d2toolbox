@@ -18,3 +18,7 @@ updates:
         patterns:
           - "eslint-config-next"
           - "next"
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
