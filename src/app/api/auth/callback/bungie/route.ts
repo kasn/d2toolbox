@@ -7,7 +7,7 @@ export async function GET(request: Request) {
   if (!code) {
     return NextResponse.redirect(new URL("/?error=missing_code", request.url));
   }
-
+  console.log;
   const tokenRes = await fetch(
     "https://www.bungie.net/platform/app/oauth/token",
     {
@@ -17,7 +17,7 @@ export async function GET(request: Request) {
         grant_type: "authorization_code",
         code,
         client_id: process.env.NEXT_PUBLIC_BUNGIE_CLIENT_ID!,
-        client_secret: process.env.NEXT_PUBLIC_BUNGIE_CLIENT_SECRET!,
+        client_secret: process.env.BUNGIE_CLIENT_SECRET!,
       }),
     },
   );
