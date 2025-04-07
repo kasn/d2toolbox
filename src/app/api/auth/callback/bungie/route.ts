@@ -16,8 +16,8 @@ export async function GET(request: Request) {
       body: new URLSearchParams({
         grant_type: "authorization_code",
         code,
-        client_id: process.env.BUNGIE_CLIENT_ID!,
-        client_secret: process.env.BUNGIE_CLIENT_SECRET!,
+        client_id: process.env.NEXT_PUBLIC_BUNGIE_CLIENT_ID!,
+        client_secret: process.env.NEXT_PUBLIC_BUNGIE_CLIENT_SECRET!,
       }),
     },
   );
