@@ -7,7 +7,7 @@ export async function GET(request: Request) {
   if (!code) {
     return NextResponse.redirect(new URL("/?error=missing_code", request.url));
   }
-  console.log;
+
   const tokenRes = await fetch(
     "https://www.bungie.net/platform/app/oauth/token",
     {
