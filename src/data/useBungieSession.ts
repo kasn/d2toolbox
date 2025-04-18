@@ -1,18 +1,11 @@
+"use client";
+
+import useLocalStorageState from "use-local-storage-state";
+
 export function useBungieSession(): boolean {
-  if (typeof window === "undefined") {
-    return false;
-  }
+  const [token] = useLocalStorageState<BungieToken>("bungie_token", {
+    defaultValue: undefined,
+  });
 
-  const raw = localStorage.getItem("bungie_token");
-
-  if (!raw) {
-    return false;
-  }
-
-  try {
-    const token = JSON.parse(raw) as BungieToken;
-    return true;
-  } catch {
-    return false;
-  }
+  return token !== undefined;
 }

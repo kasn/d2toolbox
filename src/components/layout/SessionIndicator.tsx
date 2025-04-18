@@ -3,31 +3,22 @@
 import { useBungieProfile } from "@/data/useBungieProfile";
 import { useBungieSession } from "@/data/useBungieSession";
 import handleLogin from "@/lib/auth/handleLogin";
-import Link from "next/link";
 
 function SessionIndicator() {
   const validSession = useBungieSession();
 
   if (!validSession) {
-    return (
-      <div>
-        <button onClick={handleLogin}>Login</button>
-      </div>
-    );
+    return <button onClick={handleLogin}>Login</button>;
   }
 
-  return (
-    <div>
-      <SessionIndicatorStatus />
-    </div>
-  );
+  return <SessionIndicatorStatus />;
 }
 
 function SessionIndicatorStatus() {
   const { profile, loading } = useBungieProfile();
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <span>Loading...</span>;
   }
 
   if (!profile) {
