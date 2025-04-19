@@ -1,7 +1,7 @@
 "use client";
 
 import Tool from "@/components/Tool";
-import { tools } from "../data";
+import { tools } from "../../data";
 import useLocalStorageState from "use-local-storage-state";
 import Filter from "./_components/filter";
 

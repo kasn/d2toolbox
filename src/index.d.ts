@@ -35,6 +35,6 @@ type BungieToken = {
   refresh_token: string;
   expires_in: number;
   received_at: number; // epoch ms
-  destiny_membership_id: string;
-  membership_type: BungieMembershipType;
+  destiny_membership_id?: string;
+  membership_type?: BungieMembershipType;
 };

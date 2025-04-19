@@ -23,13 +23,13 @@ export async function GET(request: Request) {
   );
 
   if (!tokenRes.ok) {
+    console.error("Token exchange failed:", await tokenRes.text());
     return NextResponse.redirect(
       new URL("/?error=token_exchange_failed", request.url),
     );
   }
 
   const tokenData = await tokenRes.json();
-
   const redirectUrl = new URL("/login/capture", request.url);
   redirectUrl.hash = new URLSearchParams({
     access_token: tokenData.access_token,
@@ -37,6 +37,5 @@ export async function GET(request: Request) {
     expires_in: tokenData.expires_in.toString(),
     membership_id: tokenData.membership_id,
   }).toString();
-
   return NextResponse.redirect(redirectUrl);
 }
