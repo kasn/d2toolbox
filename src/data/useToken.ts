@@ -43,7 +43,7 @@ export default function useToken() {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({
         grant_type: "refresh_token",
-        refresh_token: token.refresh_token,
+        refresh_token: localtoken.refresh_token,
         client_id: process.env.NEXT_PUBLIC_BUNGIE_CLIENT_ID!,
       }),
     });
