@@ -2,18 +2,21 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { getProfile } from "bungie-api-ts/destiny2";
-import { bungieHttpClient } from "@/lib/bungieHttpClient";
+import useBungieHttpClient from "./useBungieHttpClient";
 import { type BungieMembershipType } from "bungie-api-ts/common";
-import { getValidToken } from "@/lib/auth/getValidToken";
+import useToken from "./useToken";
 
 export function useBungieProfile() {
+  const { getValidToken } = useToken();
+  const bungieHttpClient = useBungieHttpClient();
+
   const { data, error, isLoading } = useQuery({
     queryKey: ["bungie-profile"],
     queryFn: async () => {
       const token = await getValidToken();
 
       const result = await getProfile(bungieHttpClient, {
-        destinyMembershipId: token.destiny_membership_id,
+        destinyMembershipId: token.destiny_membership_id!,
         membershipType: token.membership_type as BungieMembershipType,
         components: [
           100, // DestinyComponentType.Profiles
