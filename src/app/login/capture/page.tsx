@@ -15,7 +15,7 @@ export default function CaptureAuth() {
     const run = async () => {
       const hash = window.location.hash.substring(1);
       const params = new URLSearchParams(hash);
-      console.log("Hash params:", params.keys());
+
       const token: BungieToken = {
         access_token: params.get("access_token")!,
         refresh_token: params.get("refresh_token")!,
@@ -23,18 +23,16 @@ export default function CaptureAuth() {
         received_at: Date.now(),
         destiny_membership_id: params.get("membership_id") || "",
       };
-      console.log("Token params:", token);
+
       if (!token.access_token) {
         router.replace("/?error=missing_token");
         return;
       }
-      console.log("Token received:", token);
       // Store temporarily to use the httpClient
       setToken(token);
 
       try {
         const result = await getMembershipDataForCurrentUser(bungieHttpClient);
-
         const primary = result.Response.primaryMembershipId;
         const match =
           result.Response.destinyMemberships.find(
@@ -50,11 +48,11 @@ export default function CaptureAuth() {
         console.error("Failed to fetch Destiny membership info:", err);
         // Optional: clean up
         removeItem();
-        // router.replace("/?error=membership_lookup_failed");
+        router.replace("/?error=membership_lookup_failed");
         return;
       }
 
-      // router.replace("/");
+      router.replace("/");
     };
 
     run();

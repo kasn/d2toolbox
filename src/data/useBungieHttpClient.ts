@@ -6,7 +6,6 @@ function useBungieHttpClient(): HttpClient {
 
   const bungieHttpClient: HttpClient = async (config: HttpClientConfig) => {
     const token = await getValidToken();
-    console.log("useBungieHttpClient", token);
     let url = new URL(config.url);
     if (config.params) {
       const searchParams = new URLSearchParams();

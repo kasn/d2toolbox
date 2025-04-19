@@ -1,18 +1,40 @@
 import useLocalStorageState from "use-local-storage-state";
 
+const getTokenFromLocalStorage = (): BungieToken | undefined => {
+  const raw = localStorage.getItem("bungie_token");
+  if (!raw) {
+    return undefined;
+  }
+
+  return JSON.parse(raw) as BungieToken;
+};
+
 export default function useToken() {
   const [token, setToken, { removeItem }] = useLocalStorageState<BungieToken>(
     "bungie_token",
     undefined,
   );
-  console.log("rerun yseToken");
+
   const getValidToken = async (): Promise<BungieToken> => {
-    if (!token) throw new Error("No token found");
-    console.log("in getValidToken", token);
-    const expiresAt = token.received_at + token.expires_in * 1000;
+    // we might have a race condition here, so try to see if we have a token in local storage
+    // in a perfect world, `useLocalStorageState` would also offer a callable method that gets in
+    // from local storage directly and not just from the state
+    // but this is a workaround for now
+    let localtoken: BungieToken | null = null;
+    if (token) {
+      localtoken = token;
+    } else {
+      const localStorageToken = getTokenFromLocalStorage();
+      if (!localStorageToken) {
+        throw new Error("No token found");
+      }
+      localtoken = localStorageToken;
+    }
+
+    const expiresAt = localtoken.received_at + localtoken.expires_in * 1000;
 
     if (Date.now() < expiresAt - 60_000) {
-      return token; // still valid
+      return localtoken; // still valid
     }
 
     // expired → refresh it
