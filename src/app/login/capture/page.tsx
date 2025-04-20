@@ -63,7 +63,7 @@ export default function CaptureAuth() {
     };
 
     run();
-  }, [router]);
+  }, [router, bungieHttpClient, setToken, removeItem, setProfile]);
 
   return <p>Completing login…</p>;
 }
