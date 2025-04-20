@@ -1,42 +1,27 @@
 "use client";
 
-import { useBungieProfile } from "@/data/useBungieProfile";
-import { useBungieSession } from "@/data/useBungieSession";
+import useLocalProfile from "@/data/useLocalProfile";
 import handleLogin from "@/lib/auth/handleLogin";
 
-function SessionIndicator() {
-  const validSession = useBungieSession();
-
-  if (!validSession) {
-    return <button onClick={handleLogin}>Login</button>;
-  }
-
-  return <SessionIndicatorStatus />;
-}
-
-function SessionIndicatorStatus() {
-  const { profile, loading } = useBungieProfile();
-
-  if (loading) {
-    return <span>Loading...</span>;
-  }
-
-  if (!profile) {
-    return (
-      <div>
-        <button onClick={handleLogin}>Login</button>
-      </div>
-    );
-  }
-
+const Hi = ({ profile }: { profile: LocalProfile }) => {
   return (
     <div>
       Hi,{" "}
       <strong>
-        {profile.profile.data?.userInfo.bungieGlobalDisplayName}#
-        {profile.profile.data?.userInfo.bungieGlobalDisplayNameCode}
+        {profile.displayName}#{profile.displayCode}
       </strong>
     </div>
   );
+};
+
+function SessionIndicator() {
+  const { profile } = useLocalProfile();
+
+  if (profile) {
+    return <Hi profile={profile} />;
+  }
+
+  return <button onClick={handleLogin}>Login</button>;
 }
+
 export default SessionIndicator;

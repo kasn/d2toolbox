@@ -1,6 +1,6 @@
 "use client";
 
-import { useBungieProfile } from "@/data/useBungieProfile";
+import { useBungieProfile } from "@/data/bungie.net/useBungieProfile";
 import handleLogin from "@/lib/auth/handleLogin";
 
 export default function LoginPage() {

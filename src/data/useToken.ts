@@ -9,6 +9,53 @@ const getTokenFromLocalStorage = (): BungieToken | undefined => {
   return JSON.parse(raw) as BungieToken;
 };
 
+/**
+  maybe someday we will need this
+
+  try {
+    const updatedToken = await refreshToken(localtoken);
+    setToken(updatedToken);
+    return updatedToken;
+  } catch (err) {
+    removeItem();
+    throw new Error("Token refresh failed");
+  }
+*/
+async function refreshToken(currentToken: BungieToken): Promise<BungieToken> {
+  const expiresAt = currentToken.received_at + currentToken.expires_in * 1000;
+
+  if (Date.now() < expiresAt - 60_000) {
+    return currentToken; // still valid
+  }
+
+  // expired → refresh it
+  const res = await fetch("https://www.bungie.net/platform/app/oauth/token", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      grant_type: "refresh_token",
+      refresh_token: currentToken.refresh_token,
+      client_id: process.env.NEXT_PUBLIC_BUNGIE_CLIENT_ID!,
+    }),
+  });
+
+  const data = await res.json();
+
+  if (!res.ok || !data.access_token) {
+    throw new Error("Token refresh failed");
+  }
+
+  const updated: BungieToken = {
+    ...currentToken,
+    access_token: data.access_token,
+    refresh_token: data.refresh_token,
+    expires_in: data.expires_in,
+    received_at: Date.now(),
+  };
+
+  return updated;
+}
+
 export default function useToken() {
   const [token, setToken, { removeItem }] = useLocalStorageState<BungieToken>(
     "bungie_token",
@@ -31,41 +78,7 @@ export default function useToken() {
       localtoken = localStorageToken;
     }
 
-    const expiresAt = localtoken.received_at + localtoken.expires_in * 1000;
-
-    if (Date.now() < expiresAt - 60_000) {
-      return localtoken; // still valid
-    }
-
-    // expired → refresh it
-    const res = await fetch("https://www.bungie.net/platform/app/oauth/token", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        grant_type: "refresh_token",
-        refresh_token: localtoken.refresh_token,
-        client_id: process.env.NEXT_PUBLIC_BUNGIE_CLIENT_ID!,
-      }),
-    });
-
-    const data = await res.json();
-
-    if (!res.ok || !data.access_token) {
-      removeItem();
-      throw new Error("Token refresh failed");
-    }
-
-    const updated: BungieToken = {
-      ...token,
-      access_token: data.access_token,
-      refresh_token: data.refresh_token,
-      expires_in: data.expires_in,
-      received_at: Date.now(),
-    };
-
-    setToken(updated);
-
-    return updated;
+    return localtoken;
   };
 
   return {

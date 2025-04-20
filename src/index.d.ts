@@ -38,3 +38,8 @@ type BungieToken = {
   destiny_membership_id?: string;
   membership_type?: BungieMembershipType;
 };
+
+type LocalProfile = {
+  displayName: string | undefined;
+  displayCode: number | undefined;
+};
