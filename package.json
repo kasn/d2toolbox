@@ -21,7 +21,7 @@
     "bungie-api-ts": "^5.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "eslint": "^9.25.0",
+    "eslint": "^9.25.1",
     "eslint-config-next": "^15.3.1",
     "lucide-react": "^0.501.0",
     "next": "^15.3.1",
