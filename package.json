@@ -9,6 +9,9 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
   },
+  "engines": {
+    "node": "22.*"
+  },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",
     "@svgr/webpack": "^8.1.0",
