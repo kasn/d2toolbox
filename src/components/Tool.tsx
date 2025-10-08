@@ -1,4 +1,3 @@
-import Image, { getImageProps } from "next/image";
 import { SocialIcon } from "react-social-icons";
 
 type ToolProps = {
@@ -6,14 +5,14 @@ type ToolProps = {
 };
 
 function Tool({ tool }: ToolProps) {
-  const {
-    props: { src },
-  } = getImageProps({
-    alt: "",
-    width: tool.image.width,
-    height: tool.image.height,
-    src: tool.image.src,
-  });
+  // const {
+  //   props: { src },
+  // } = getImageProps({
+  //   alt: "",
+  //   width: tool.image.width,
+  //   height: tool.image.height,
+  //   src: tool.image.src,
+  // });
 
   return (
     <li className="border-white/7.5 dark:border-1 relative rounded-2xl border pb-7 shadow-lg dark:border-zinc-900">
@@ -24,7 +23,7 @@ function Tool({ tool }: ToolProps) {
         rel="noreferrer"
         className="aspect-5/4 block w-full rounded-t-2xl bg-cover bg-center object-cover shadow-lg"
         style={{
-          backgroundImage: `url(${src})`,
+          backgroundImage: `url(${tool.image.src})`,
         }}
       >
         <h2 className="bg-linear-to-t left-0 right-0 top-0 rounded-xl from-transparent to-zinc-900 px-6 pb-10 pt-3 text-3xl font-bold leading-8 tracking-tight text-white">
