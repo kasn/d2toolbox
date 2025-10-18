@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import DestinyIcon from "@/components/DestinyIcon";
-// import { ModeToggle } from "@/components/ModeToggle";
-import SessionIndicator from "./SessionIndicator";
+import { ModeToggle } from "@/components/ModeToggle";
 
 function Header() {
   return (
@@ -15,8 +14,7 @@ function Header() {
         </h1>
       </div>
       <div className="items-right flex gap-5">
-        <SessionIndicator />
-        {/* <ModeToggle /> */}
+        <ModeToggle />
       </div>
     </header>
   );

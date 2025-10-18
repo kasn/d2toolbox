@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import symbols from "./symbols";
-import Image from "next/image";
+import symbols from "./Symbols";
 import { cn } from "@/lib/utils";
 
 const subject = [
@@ -31,8 +30,8 @@ const truths: [
   ["guardian", "kill", "witness"],
   ["guardian", "worship", "traveller"],
   ["guardian", "worship", "light"],
-  ["hive", "worship", "worm"], 
-  ["hive", "worship", "darkness"],  
+  ["hive", "worship", "worm"],
+  ["hive", "worship", "darkness"],
   ["darkness", "stop", "savathun"],
   ["traveller", "give", "guardian"],
   ["traveller", "give", "light"],
@@ -40,7 +39,7 @@ const truths: [
   ["savathun", "stop", "darkness"],
   ["pyramid", "give", "darkness"],
   ["pyramid", "kill", "worm"],
-  ["pyramid", "drink", "worm"]
+  ["pyramid", "drink", "worm"],
 ];
 
 type RelevantIds = Array<TSymbol["id"]>;
@@ -60,7 +59,7 @@ function canSelect(selected: TSymbol["id"][], symbol: TSymbol["id"]): boolean {
 function Symbol({ symbol }: { symbol: TSymbol }) {
   return (
     <>
-      <Image
+      <img
         src={symbol.icon}
         alt={symbol.name}
         width={120}
