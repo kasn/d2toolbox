@@ -1,10 +1,10 @@
-import { Providers } from "@/app/providers";
+import { Providers } from "@/components/Providers";
 import {
   Outlet,
   createRootRoute,
   HeadContent,
   Scripts,
-} from "@tanstack/react-router"
+} from "@tanstack/react-router";
 import "@/styles/globals.css";
 
 import Footer from "@/components/Footer";
@@ -18,29 +18,29 @@ export const Route = createRootRoute({
         name: "viewport",
         content: "width=device-width, initial-scale=1",
       },
-      { title: "Destiny 2 Tools" }
+      { title: "Destiny 2 Tools" },
     ],
   }),
   component: RootLayout,
-})
+});
 
 function RootLayout() {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <link rel="icon" href="/favicon.ico" />
       <head>
         <HeadContent />
       </head>
       <body className="bg-white antialiased dark:bg-zinc-900">
-        <main>
-          <Header />        
-          {/* <Providers> */}
-          <div className="m-14 mt-20">
-            <Outlet />
-          </div>
-          <Footer />
-        </main>          
-        {/* </Providers> */}
+        <Providers>
+          <main>
+            <Header />
+            <div className="m-14 mt-20">
+              <Outlet />
+            </div>
+            <Footer />
+          </main>
+        </Providers>
         <Scripts />
       </body>
     </html>

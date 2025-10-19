@@ -1,6 +1,6 @@
 "use client";
 
-import { useTheme } from "next-themes";
+import { useTheme } from "@/components/providers/ThemeProvider";
 import { type SVGProps, type JSX } from "react";
 
 function SunIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
@@ -24,8 +24,8 @@ function MoonIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
 }
 
 export function ModeToggle() {
-  let { resolvedTheme, setTheme } = useTheme();
-  let otherTheme = resolvedTheme === "dark" ? "light" : "dark";
+  let { theme, setTheme } = useTheme();
+  let otherTheme = theme === "dark" ? "light" : "dark";
 
   return (
     <button
