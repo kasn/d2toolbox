@@ -39,3 +39,4 @@ certificates
 
 dist
 .output
+.nitro      
