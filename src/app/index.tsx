@@ -1,16 +1,19 @@
-"use client";
-
+import { createFileRoute } from "@tanstack/react-router";
 import Tool from "@/components/Tool";
-import { tools } from "../../data";
+import { tools } from "../data";
 import useLocalStorageState from "use-local-storage-state";
-import Filter from "./_components/filter";
+import Filter from "@/components/Filter";
 
 const activeTools = tools.filter((tool) => tool.active);
 const categories = tools.map((tool) => tool.category).flat();
 
 const uniqueCategories = [...new Set(categories)];
 
-export default function Index() {
+export const Route = createFileRoute("/")({
+  component: Index,
+});
+
+function Index() {
   const [filter, setFilter] = useLocalStorageState<TCategories[]>("filter", {
     defaultValue: [],
   });
