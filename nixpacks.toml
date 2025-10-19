@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["nodejs", "pnpm"]
+
+[phases.build]
+cmds = ["pnpm run build"]
+
+[start]
+cmd = "node .output/server/index.mjs"
