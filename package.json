@@ -40,7 +40,7 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.9.3",
     "use-local-storage-state": "^19.5.0",
-    "vite": "^7.1.10",
+    "vite": "^7.2.3",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "devDependencies": {
