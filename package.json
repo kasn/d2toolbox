@@ -9,6 +9,7 @@
     "start": "node .output/server/index.mjs",
     "typecheck": "tsc --noEmit"
   },
+  "packageManager": "pnpm@10.28.0",
   "engines": {
     "node": "24.*",
     "pnpm": "10.28.*"
