@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit"
   },
   "engines": {
-    "node": "24.*"
+    "node": "24.*",
+    "pnpm": "10.28.*"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
