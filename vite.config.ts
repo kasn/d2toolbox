@@ -22,6 +22,12 @@ export default defineConfig({
       },
     }),
     viteReact(),
-    nitro(),
+    nitro({
+      rollupConfig: {
+        treeshake: {
+          moduleSideEffects: (id) => id.includes("react-social-icons"),
+        },
+      },
+    }),
   ],
 });
