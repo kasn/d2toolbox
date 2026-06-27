@@ -7,7 +7,9 @@
     "dev": "vite dev",
     "build": "vite build",
     "start": "node .output/server/index.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "login": "node scripts/capture.ts --login",
+    "capture": "node scripts/capture.ts"
   },
   "packageManager": "pnpm@10.28.0",
   "engines": {
@@ -45,6 +47,7 @@
     "vite-tsconfig-paths": "^6.1.1"
   },
   "devDependencies": {
+    "playwright": "^1.61.1",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2"
   },

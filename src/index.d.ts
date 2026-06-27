@@ -10,6 +10,7 @@ type TCategories =
   | "tools";
 
 type TTool = {
+  slug: string;
   name: string;
   url: string;
   description: ReactElement<any>;
@@ -22,6 +23,8 @@ type TTool = {
   requiresLogin: boolean;
   active: boolean;
   category: categories[];
+  crawl: boolean;
+  wait?: undefined | string;
 };
 
 type TSymbol = {
