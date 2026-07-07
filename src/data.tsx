@@ -72,7 +72,7 @@ export const tools: Array<TTool> = [
     slug: "armor-picker",
     name: "D2ArmorPicker",
     url: "https://d2armorpicker.com/#/",
-    image: { src: "/images/d2armorpicker.png", width: 700, height: 552 },
+    image: { src: "/images/armor-picker.png", width: 700, height: 552 },
     description: (
       <>
         D2ArmorPicker (or short D2AP) is a small web-app to quickly find armor
@@ -95,7 +95,7 @@ export const tools: Array<TTool> = [
     slug: "checkpoint",
     name: "D2Checkpoint.com",
     url: "https://d2checkpoint.com/",
-    image: { src: "/images/d2checkpoint.png", width: 700, height: 627 },
+    image: { src: "/images/checkpoint.png", width: 700, height: 627 },
     requiresLogin: false,
     description: <>Find checkpoits for raid and dungeon encouters</>,
     additionalLinks: [
@@ -110,7 +110,7 @@ export const tools: Array<TTool> = [
     slug: "lightgg",
     name: "light.gg",
     url: "https://www.light.gg/",
-    image: { src: "/images/light.gg.png", width: 700, height: 552 },
+    image: { src: "/images/lightgg.png", width: 700, height: 552 },
     requiresLogin: false,
     description: (
       <>home of the most powerful Destiny 2 Database & Tools on the Internet</>
@@ -129,7 +129,7 @@ export const tools: Array<TTool> = [
     slug: "foundry",
     name: "Foundry",
     url: "https://d2foundry.gg/",
-    image: { src: "/images/d2foundry.png", width: 700, height: 472 },
+    image: { src: "/images/foundry.png", width: 700, height: 472 },
     requiresLogin: true,
     description: <>Your companion to Destiny 2 weapons and perks.</>,
     active: false,
@@ -145,7 +145,7 @@ export const tools: Array<TTool> = [
     slug: "engram-blue",
     name: "engram.blue",
     url: "https://engram.blue/",
-    image: { src: "/images/engram.blue.png", width: 700, height: 552 },
+    image: { src: "/images/engram-blue.png", width: 700, height: 552 },
     requiresLogin: true,
     description: (
       <>
@@ -176,7 +176,7 @@ export const tools: Array<TTool> = [
     ),
     url: "https://destinyrecipes.com/",
     requiresLogin: true,
-    image: { src: "/images/destinyrecipes.png", width: 700, height: 627 },
+    image: { src: "/images/recipes.png", width: 700, height: 627 },
     additionalLinks: [
       "https://twitter.com/D2Recipes",
       "https://discord.com/invite/cX8R6wPRB8",
@@ -190,7 +190,7 @@ export const tools: Array<TTool> = [
     slug: "checklist",
     name: "D2 Checklist",
     url: "https://www.d2checklist.com/",
-    image: { src: "/images/d2checklist.png", width: 700, height: 627 },
+    image: { src: "/images/checklist.png", width: 700, height: 627 },
     requiresLogin: true,
     description: (
       <>
@@ -204,7 +204,7 @@ export const tools: Array<TTool> = [
       "https://twitter.com/D2Checklist",
       "https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=VBASBDZD7HAHS",
     ],
-    active: true,
+    active: false,
     category: ["analysis", "tools"],
     crawl: true
   },
@@ -237,7 +237,7 @@ export const tools: Array<TTool> = [
     slug: "raid-report",
     name: "raid.report",
     url: "https://raid.report",
-    image: { src: "/images/raid.report.png", width: 700, height: 552 },
+    image: { src: "/images/raid-report.png", width: 700, height: 552 },
     description: <>Show raid completions and stats</>,
     requiresLogin: false,
     additionalLinks: [
@@ -252,7 +252,7 @@ export const tools: Array<TTool> = [
     slug: "lost-sector-report",
     name: "D2 Lost Sector Report",
     url: "https://d2lostsector.report/",
-    image: { src: "/images/lostsectorreport.png", width: 700, height: 530 },
+    image: { src: "/images/lost-sector-report.png", width: 700, height: 530 },
     description: <>Your daily Destiny 2 Expert & Master Lost Sector report. </>,
     requiresLogin: false,
     additionalLinks: [
@@ -270,13 +270,13 @@ export const tools: Array<TTool> = [
     name: "TodayInDestiny",
     url: "https://todayindestiny.com/",
     description: <>What should we do today Guardian?</>,
-    image: { src: "/images/todayindestiny.png", width: 700, height: 552 },
+    image: { src: "/images/today-in-destiny.png", width: 700, height: 552 },
     requiresLogin: false,
     additionalLinks: [
       "https://www.patreon.com/todayindestiny",
       "https://ko-fi.com/JpDeathBlade",
     ],
-    active: true,
+    active: false,
     category: ["statistics", "community", "progress", "tools"],
     crawl: true
   },
@@ -284,7 +284,7 @@ export const tools: Array<TTool> = [
     slug: "synergy",
     name: "D2 Synergy",
     url: "https://d2synergy.com/",
-    image: { src: "/images/d2synergy.png", width: 700, height: 552 },
+    image: { src: "/images/synergy.png", width: 700, height: 552 },
     description: (
       <>
         Synergy groups progressions together and gives recommendations for
@@ -296,7 +296,7 @@ export const tools: Array<TTool> = [
       "https://github.com/dev-brendanprice/D2-Synergy",
       "https://twitter.com/_brendanprice",
     ],
-    active: true,
+    active: false,
     category: ["progress", "tools"],
     crawl: true
   },
@@ -324,7 +324,7 @@ export const tools: Array<TTool> = [
     slug: "where-is-xur",
     name: "Where is Xur?",
     url: "https://whereisxur.com/",
-    image: { src: "/images/whereisxur.png", width: 700, height: 552 },
+    image: { src: "/images/where-is-xur.png", width: 700, height: 552 },
     description: <>Nobody ever asks &ldquo;How is Xur?&rdquo;</>,
     requiresLogin: false,
     additionalLinks: [
@@ -341,7 +341,7 @@ export const tools: Array<TTool> = [
     slug: "bungo",
     name: "bungie.net",
     url: "https://www.bungie.net/7",
-    image: { src: "/images/bungie.png", width: 700, height: 527 },
+    image: { src: "/images/bungo.png", width: 700, height: 527 },
     description: <>the home of Destiny2</>,
     requiresLogin: true,
     additionalLinks: [

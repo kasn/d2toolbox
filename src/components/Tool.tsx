@@ -1,18 +1,12 @@
 import { SocialIcon } from "react-social-icons";
+import { responsiveImage } from "../lib/images";
 
 type ToolProps = {
   tool: TTool;
 };
 
 function Tool({ tool }: ToolProps) {
-  // const {
-  //   props: { src },
-  // } = getImageProps({
-  //   alt: "",
-  //   width: tool.image.width,
-  //   height: tool.image.height,
-  //   src: tool.image.src,
-  // });
+  const image = responsiveImage(tool.image.src);
 
   return (
     <li className="border-white/7.5 dark:border-1 relative rounded-2xl border pb-7 shadow-lg dark:border-zinc-900">
@@ -21,12 +15,17 @@ function Tool({ tool }: ToolProps) {
         href={tool.url}
         target="_blank"
         rel="noreferrer"
-        className="aspect-5/4 block w-full rounded-t-2xl bg-cover bg-center object-cover shadow-lg"
-        style={{
-          backgroundImage: `url(${tool.image.src})`,
-        }}
+        className="aspect-5/4 relative block w-full overflow-hidden rounded-t-2xl shadow-lg"
       >
-        <h2 className="bg-linear-to-t left-0 right-0 top-0 rounded-xl from-transparent to-zinc-900 px-6 pb-10 pt-3 text-3xl font-bold leading-8 tracking-tight text-white">
+        <img
+          src={image.src}
+          srcSet={image.srcSet}
+          sizes="(min-width: 1280px) 400px, (min-width: 640px) 50vw, 100vw"
+          alt={tool.name}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+        <h2 className="bg-linear-to-t absolute left-0 right-0 top-0 rounded-xl from-transparent to-zinc-900 px-6 pb-10 pt-3 text-3xl font-bold leading-8 tracking-tight text-white">
           {tool.name}
         </h2>
       </a>
