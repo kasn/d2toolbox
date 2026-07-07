@@ -1,4 +1,26 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Chakra Petch";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/chakra-petch-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Chakra Petch";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/chakra-petch-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Chakra Petch";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/chakra-petch-700.woff2") format("woff2");
+}
 /*
   ---break---
 */
@@ -52,6 +74,8 @@
   --chart-4: hsl(43 74% 66%);
   --chart-5: hsl(27 87% 67%);
   --radius: 0.6rem;
+  --gold: hsl(43 68% 52%);
+  --gold-foreground: hsl(43 80% 30%);
 }
 /*
   ---break---
@@ -81,11 +105,16 @@
   --chart-3: hsl(30 80% 55%);
   --chart-4: hsl(280 65% 60%);
   --chart-5: hsl(340 75% 55%);
+  --gold: hsl(43 74% 56%);
+  --gold-foreground: hsl(43 74% 66%);
 }
 /*
   ---break---
 */
 @theme inline {
+  --font-display: "Chakra Petch", ui-sans-serif, sans-serif;
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -149,4 +178,42 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Portal-style staggered card reveal on page load. */
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card-in {
+  animation: card-in 0.45s ease-out both;
+  animation-delay: calc(var(--card-index, 0) * 40ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-in {
+    animation: none;
+  }
+}
+
+/* Faint gold glow bleeding down from the header, stronger in dark mode. */
+.page-atmosphere {
+  background-image: radial-gradient(
+    120rem 40rem at 50% -20rem,
+    hsl(43 68% 52% / 0.06),
+    transparent 70%
+  );
+  background-repeat: no-repeat;
+}
+.dark .page-atmosphere {
+  background-image: radial-gradient(
+    120rem 40rem at 50% -20rem,
+    hsl(43 74% 56% / 0.09),
+    transparent 70%
+  );
 }

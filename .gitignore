@@ -39,4 +39,7 @@ certificates
 
 dist
 .output
-.nitro      
+.nitro
+
+d2profile
+d2-profile/

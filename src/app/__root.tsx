@@ -31,11 +31,11 @@ function RootLayout() {
       <head>
         <HeadContent />
       </head>
-      <body className="bg-white antialiased dark:bg-zinc-900">
+      <body className="page-atmosphere bg-white antialiased dark:bg-zinc-950">
         <Providers>
           <main>
             <Header />
-            <div className="m-14 mt-20">
+            <div className="mx-auto max-w-screen-2xl px-6 pb-14 pt-24 lg:px-12">
               <Outlet />
             </div>
             <Footer />
