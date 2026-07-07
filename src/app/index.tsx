@@ -18,6 +18,12 @@ function Index() {
     defaultValue: [],
   });
 
+  const visibleTools = activeTools.filter(
+    (tool) =>
+      filter.length === 0 ||
+      tool.category?.some((cat) => filter.includes(cat)),
+  );
+
   return (
     <>
       <Filter
@@ -25,19 +31,16 @@ function Index() {
         setFilter={setFilter}
         categories={uniqueCategories}
       />
+      <p className="font-display mt-6 text-xs font-semibold tracking-[0.2em] text-zinc-400 dark:text-zinc-500">
+        {visibleTools.length} / {activeTools.length}
+      </p>
       <ul
         role="list"
-        className="not-focus-visible:focus:outline-hidden mt-4 grid grid-cols-1 gap-x-8 gap-y-10 sm:gap-y-16 md:grid-cols-2 lg:grid-cols-3 lg:gap-y-10 2xl:grid-cols-4"
+        className="not-focus-visible:focus:outline-hidden mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
       >
-        {activeTools
-          .filter(
-            (tool) =>
-              filter.length === 0 ||
-              tool.category?.some((cat) => filter.includes(cat)),
-          )
-          .map((tool) => (
-            <Tool key={tool.name} tool={tool} />
-          ))}
+        {visibleTools.map((tool, index) => (
+          <Tool key={tool.name} tool={tool} index={index} />
+        ))}
       </ul>
     </>
   );

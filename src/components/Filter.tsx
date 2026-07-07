@@ -14,9 +14,9 @@ export default function Filter({ filter, setFilter, categories }: FilterProps) {
           <li key={category}>
             <button
               className={cn([
-                "mr-4 inline-flex cursor-pointer items-center rounded-md bg-gray-50 px-4 py-2 text-sm font-medium text-gray-600 shadow-2xl ring-1 ring-inset ring-gray-500/10 hover:bg-gray-200 dark:bg-gray-400/10 dark:text-white dark:ring-gray-400/20 dark:hover:bg-gray-400",
+                "font-display mb-2 mr-3 inline-flex cursor-pointer items-center rounded-sm px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-zinc-500 ring-1 ring-inset ring-zinc-900/15 transition-colors hover:text-zinc-900 hover:ring-zinc-900/40 dark:text-zinc-400 dark:ring-white/15 dark:hover:text-white dark:hover:ring-white/40",
                 {
-                  "bg-blue-500 text-white hover:bg-blue-600 dark:bg-blue-400 dark:hover:bg-blue-600":
+                  "bg-gold/10 text-gold-foreground ring-gold/50 hover:text-gold-foreground hover:ring-gold dark:bg-gold/15 dark:text-gold dark:ring-gold/50 dark:hover:text-gold":
                     filter.includes(category),
                 },
               ])}
@@ -36,7 +36,7 @@ export default function Filter({ filter, setFilter, categories }: FilterProps) {
       </ul>
       {filter.length > 0 ? (
         <button
-          className="ml-2 cursor-pointer items-center rounded-md bg-gray-50 px-4 py-2 text-sm font-medium text-gray-600 shadow-2xl ring-1 ring-inset ring-gray-500/10 hover:bg-gray-200 dark:bg-gray-400/10 dark:text-white dark:ring-gray-400/20 dark:hover:bg-gray-400"
+          className="font-display ml-2 cursor-pointer items-center rounded-sm px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-zinc-500 ring-1 ring-inset ring-zinc-900/15 transition-colors hover:text-zinc-900 hover:ring-zinc-900/40 dark:text-zinc-400 dark:ring-white/15 dark:hover:text-white dark:hover:ring-white/40"
           onClick={() => setFilter([])}
         >
           Clear
