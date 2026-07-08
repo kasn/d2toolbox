@@ -1,9 +1,14 @@
+import { existsSync } from "node:fs";
 import { chromium, type BrowserContext } from "playwright";
 import { tools } from "./../src/data";
+
+// --missing: only capture tools without an existing screenshot
+const onlyMissing = process.argv.includes("--missing");
 
 const toolsToScan = tools
   .filter((tool: TTool) => tool.active)
   .filter((tool: TTool) => tool.crawl)
+  .filter((tool: TTool) => !onlyMissing || !existsSync(`src/images/${tool.slug}.png`))
 ;
 
 const PROFILE = "./d2-profile";
@@ -43,6 +48,12 @@ function waitForEnter(msg: string): Promise<string> {
 // 2) REPEATABLE: `node shot.js`
 // Opens each tool, you log in / navigate wherever you want, then press Enter to shoot.
 async function capture() {
+  if (toolsToScan.length === 0) {
+    console.log("Nothing to capture — all screenshots exist.");
+    process.exit(0);
+  }
+  console.log(`${toolsToScan.length} tool(s) to capture${onlyMissing ? " (missing only)" : ""}.`);
+
   const ctx = await open(false);
   const page = await ctx.newPage();
   for (const t of toolsToScan) {
@@ -51,7 +62,10 @@ async function capture() {
     await page
       .goto(t.url, { waitUntil: "domcontentloaded", timeout: 30_000 })
       .catch((e) => console.warn(`  (goto: ${e.message.split("\n")[0]} — continuing)`));
-    if (t.wait) await page.waitForSelector(t.wait, { timeout: 15_000 }).catch(() => {});
+    const wait = "wait" in t ? t.wait : undefined;
+    if (wait) {
+      await page.waitForSelector(wait, { timeout: 15_000 }).catch(() => {});
+    }
 
     const input = await waitForEnter(`  Navigate/log in as needed, then press Enter to capture ${t.slug} (s+Enter to skip)…`);
     if (input.toLowerCase() === "s") {

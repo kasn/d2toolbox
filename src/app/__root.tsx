@@ -42,6 +42,7 @@ function RootLayout() {
           </main>
         </Providers>
         <Scripts />
+        <script defer src="https://zahlen.modepilot.de/script.js" data-website-id="67a2c446-e3d5-4518-8b8f-c36049fff6b7"></script>
       </body>
     </html>
   );

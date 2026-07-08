@@ -3,6 +3,7 @@ import Tool from "@/components/Tool";
 import { tools } from "../data";
 import useLocalStorageState from "use-local-storage-state";
 import Filter from "@/components/Filter";
+import FieldLog from "@/components/FieldLog";
 
 const activeTools = tools.filter((tool) => tool.active);
 const categories = tools.map((tool) => tool.category).flat();
@@ -31,9 +32,12 @@ function Index() {
         setFilter={setFilter}
         categories={uniqueCategories}
       />
-      <p className="font-display mt-6 text-xs font-semibold tracking-[0.2em] text-zinc-400 dark:text-zinc-500">
-        {visibleTools.length} / {activeTools.length}
-      </p>
+      <div className="mt-6 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <p className="font-display text-xs font-semibold tracking-[0.2em] text-zinc-400 dark:text-zinc-500">
+          {visibleTools.length} / {activeTools.length}
+        </p>
+        <FieldLog />
+      </div>
       <ul
         role="list"
         className="not-focus-visible:focus:outline-hidden mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"

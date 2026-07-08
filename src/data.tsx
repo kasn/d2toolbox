@@ -1,4 +1,6 @@
-export const tools: Array<TTool> = [
+  const defineTools = <const T extends ReadonlyArray<TTool>>(tools: T) => tools;
+
+export const tools = defineTools([
   {
     slug: "starfarer",
     name: "Reminder",
@@ -344,4 +346,6 @@ export const tools: Array<TTool> = [
     category: ["statistics", "community", "progress", "tools", "inventory"],
     crawl: true
   }
-];
+]);
+
+export type ToolSlug = (typeof tools)[number]["slug"];
