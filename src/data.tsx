@@ -2,23 +2,23 @@
 
 export const tools = defineTools([
   {
+    slug: "pete-carsons",
+    name: "Vault Of Cars",
+    url: "https://petecarsons.com/",
+    requiresLogin: false,
+    description: <>Do you have what it takes to face Pete Carsons in the Vault of Cars and stop him from purchasing all of the remaining cars in The Last City?</>,
+    active: true,
+    category: ["community"],
+    crawl: true
+  },
+  {
     slug: "starfarer",
     name: "Reminder",
     url: "https://www.light.gg/db/items/472776702/starfarer-7m/",
     requiresLogin: false,
     description: <>Equip the Starfarer 7M for extra dawning spirit</>,
     active: false,
-    category: [],
-    crawl: false
-  },
-  {
-    slug: "sundered-doctrine",
-    name: "Sundered Doctrine",
-    url: "/sundered-doctrine",
-    requiresLogin: false,
-    description: <>Sundered Doctrine Resources</>,
-    active: true,
-    category: [],
+    category: ["c"],
     crawl: false
   },
   {
@@ -331,6 +331,16 @@ export const tools = defineTools([
     active: true,
     category: ["tools"],
     crawl: true
+  },
+  {
+    slug: "sundered-doctrine",
+    name: "Sundered Doctrine",
+    url: "/sundered-doctrine",
+    requiresLogin: false,
+    description: <>Sundered Doctrine Resources</>,
+    active: true,
+    category: [],
+    crawl: false
   },
   {
     slug: "bungo",
