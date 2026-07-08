@@ -15,11 +15,6 @@ type TTool = {
   url: string;
   description: ReactElement<any>;
   additionalLinks?: Array<string>;
-  image: {
-    src: string;
-    width: number;
-    height: number;
-  };
   requiresLogin: boolean;
   active: boolean;
   category: categories[];

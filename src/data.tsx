@@ -3,7 +3,6 @@ export const tools: Array<TTool> = [
     slug: "starfarer",
     name: "Reminder",
     url: "https://www.light.gg/db/items/472776702/starfarer-7m/",
-    image: { src: "/images/starfarer.png", width: 700, height: 527 },
     requiresLogin: false,
     description: <>Equip the Starfarer 7M for extra dawning spirit</>,
     active: false,
@@ -14,7 +13,6 @@ export const tools: Array<TTool> = [
     slug: "sundered-doctrine",
     name: "Sundered Doctrine",
     url: "/sundered-doctrine",
-    image: { src: "/images/sundered-doctrine.jpg", width: 700, height: 552 },
     requiresLogin: false,
     description: <>Sundered Doctrine Resources</>,
     active: true,
@@ -25,7 +23,6 @@ export const tools: Array<TTool> = [
     slug: "braytech",
     name: "BRAYTECH",
     url: "https://bray.tech/",
-    image: { src: "/images/braytech.png", width: 700, height: 527 },
     requiresLogin: true,
     description: (
       <>
@@ -47,7 +44,6 @@ export const tools: Array<TTool> = [
     slug: "dim",
     name: "Destiny Item Manager",
     url: "https://app.destinyitemmanager.com/",
-    image: { src: "/images/dim.png", width: 700, height: 552 },
     requiresLogin: true,
     description: (
       <>
@@ -72,7 +68,6 @@ export const tools: Array<TTool> = [
     slug: "armor-picker",
     name: "D2ArmorPicker",
     url: "https://d2armorpicker.com/#/",
-    image: { src: "/images/armor-picker.png", width: 700, height: 552 },
     description: (
       <>
         D2ArmorPicker (or short D2AP) is a small web-app to quickly find armor
@@ -95,7 +90,6 @@ export const tools: Array<TTool> = [
     slug: "checkpoint",
     name: "D2Checkpoint.com",
     url: "https://d2checkpoint.com/",
-    image: { src: "/images/checkpoint.png", width: 700, height: 627 },
     requiresLogin: false,
     description: <>Find checkpoits for raid and dungeon encouters</>,
     additionalLinks: [
@@ -110,7 +104,6 @@ export const tools: Array<TTool> = [
     slug: "lightgg",
     name: "light.gg",
     url: "https://www.light.gg/",
-    image: { src: "/images/lightgg.png", width: 700, height: 552 },
     requiresLogin: false,
     description: (
       <>home of the most powerful Destiny 2 Database & Tools on the Internet</>
@@ -129,7 +122,6 @@ export const tools: Array<TTool> = [
     slug: "foundry",
     name: "Foundry",
     url: "https://d2foundry.gg/",
-    image: { src: "/images/foundry.png", width: 700, height: 472 },
     requiresLogin: true,
     description: <>Your companion to Destiny 2 weapons and perks.</>,
     active: false,
@@ -145,7 +137,6 @@ export const tools: Array<TTool> = [
     slug: "engram-blue",
     name: "engram.blue",
     url: "https://engram.blue/",
-    image: { src: "/images/engram-blue.png", width: 700, height: 552 },
     requiresLogin: true,
     description: (
       <>
@@ -176,7 +167,6 @@ export const tools: Array<TTool> = [
     ),
     url: "https://destinyrecipes.com/",
     requiresLogin: true,
-    image: { src: "/images/recipes.png", width: 700, height: 627 },
     additionalLinks: [
       "https://twitter.com/D2Recipes",
       "https://discord.com/invite/cX8R6wPRB8",
@@ -190,7 +180,6 @@ export const tools: Array<TTool> = [
     slug: "checklist",
     name: "D2 Checklist",
     url: "https://www.d2checklist.com/",
-    image: { src: "/images/checklist.png", width: 700, height: 627 },
     requiresLogin: true,
     description: (
       <>
@@ -212,7 +201,6 @@ export const tools: Array<TTool> = [
     slug: "ishtar-collective",
     name: "Ishtar Collective",
     url: "https://www.ishtar-collective.net/",
-    image: { src: "/images/ishtar-collective.png", width: 700, height: 527 },
     requiresLogin: false,
     description: (
       <>
@@ -237,7 +225,6 @@ export const tools: Array<TTool> = [
     slug: "raid-report",
     name: "raid.report",
     url: "https://raid.report",
-    image: { src: "/images/raid-report.png", width: 700, height: 552 },
     description: <>Show raid completions and stats</>,
     requiresLogin: false,
     additionalLinks: [
@@ -252,7 +239,6 @@ export const tools: Array<TTool> = [
     slug: "lost-sector-report",
     name: "D2 Lost Sector Report",
     url: "https://d2lostsector.report/",
-    image: { src: "/images/lost-sector-report.png", width: 700, height: 530 },
     description: <>Your daily Destiny 2 Expert & Master Lost Sector report. </>,
     requiresLogin: false,
     additionalLinks: [
@@ -270,7 +256,6 @@ export const tools: Array<TTool> = [
     name: "TodayInDestiny",
     url: "https://todayindestiny.com/",
     description: <>What should we do today Guardian?</>,
-    image: { src: "/images/today-in-destiny.png", width: 700, height: 552 },
     requiresLogin: false,
     additionalLinks: [
       "https://www.patreon.com/todayindestiny",
@@ -284,7 +269,6 @@ export const tools: Array<TTool> = [
     slug: "synergy",
     name: "D2 Synergy",
     url: "https://d2synergy.com/",
-    image: { src: "/images/synergy.png", width: 700, height: 552 },
     description: (
       <>
         Synergy groups progressions together and gives recommendations for
@@ -301,10 +285,20 @@ export const tools: Array<TTool> = [
     crawl: true
   },
   {
+    slug: "emblem-collector",
+    name: "Destiny Emblem Collector",
+    url: "https://destinyemblemcollector.com/",
+    requiresLogin: false,
+    description: <>Browse, track, and collect every Destiny 2 emblem</>,
+    additionalLinks: ["https://x.com/emblemcollector"],
+    active: true,
+    category: ["inventory", "data"],
+    crawl: true
+  },
+  {
     slug: "aegis",
     name: "Aegis Spreadsheets",
     url: "https://drive.google.com/drive/folders/1AL3GM6rSSrm4LtSZeayxpSUsvSJdsiU3",
-    image: { src: "/images/aegis.png", width: 700, height: 527 },
     description: (
       <>
         Boss Damage, Boss Health and endgame analysis. Exhaustive and detailed
@@ -324,7 +318,6 @@ export const tools: Array<TTool> = [
     slug: "where-is-xur",
     name: "Where is Xur?",
     url: "https://whereisxur.com/",
-    image: { src: "/images/where-is-xur.png", width: 700, height: 552 },
     description: <>Nobody ever asks &ldquo;How is Xur?&rdquo;</>,
     requiresLogin: false,
     additionalLinks: [
@@ -341,7 +334,6 @@ export const tools: Array<TTool> = [
     slug: "bungo",
     name: "bungie.net",
     url: "https://www.bungie.net/7",
-    image: { src: "/images/bungo.png", width: 700, height: 527 },
     description: <>the home of Destiny2</>,
     requiresLogin: true,
     additionalLinks: [
@@ -351,5 +343,5 @@ export const tools: Array<TTool> = [
     active: true,
     category: ["statistics", "community", "progress", "tools", "inventory"],
     crawl: true
-  },
+  }
 ];

@@ -7,7 +7,7 @@ type ToolProps = {
 };
 
 function Tool({ tool, index = 0 }: ToolProps) {
-  const image = responsiveImage(tool.image.src);
+  const image = responsiveImage(tool.slug);
   const kicker = tool.category[0] ?? "tool";
 
   return (
