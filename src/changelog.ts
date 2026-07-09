@@ -9,8 +9,8 @@ export type ChangelogEntry = {
 export const changelog: Array<ChangelogEntry> = [
   {
     date: "2026-07-08",
-    text: "add vault of cars",
-    slug: 'pete-carsons '
+    text: "added vault of cars",
+    slug: 'pete-carsons'
   },
   {
     date: "2026-07-08",
