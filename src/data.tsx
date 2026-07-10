@@ -1,4 +1,4 @@
-  const defineTools = <const T extends ReadonlyArray<TTool>>(tools: T) => tools;
+const defineTools = <const T extends ReadonlyArray<TTool>>(tools: T) => tools;
 
 export const tools = defineTools([
   {
@@ -67,6 +67,24 @@ export const tools = defineTools([
     crawl: true
   },
   {
+    slug: "destiny-report",
+    name: "destiny.report",
+    url: "https://destiny.report/",
+    description: (
+      <>
+        destiny.report is a fast tool for exploring Destiny 2 weapons. Search the entire
+        arsenal by name, perk, archetype, damage type, stat, source, and more, then dig
+        into any weapon's perks, stats, and rolls.<br />
+        The aim is accurate, up-to-date weapon data that's quick to search.
+      </>
+    ),
+    requiresLogin: false,
+    additionalLinks: [],
+    category: ["data"],
+    active: true,
+    crawl: true
+  },
+  {
     slug: "armor-picker",
     name: "D2ArmorPicker",
     url: "https://d2armorpicker.com/#/",
@@ -93,7 +111,7 @@ export const tools = defineTools([
     name: "D2Checkpoint.com",
     url: "https://d2checkpoint.com/",
     requiresLogin: false,
-    description: <>Find checkpoits for raid and dungeon encouters</>,
+    description: <>Find checkpoints for raid and dungeon encounters</>,
     additionalLinks: [
       "https://discord.com/invite/d2checkpoint",
       "https://ko-fi.com/d2checkpoint",
@@ -328,7 +346,7 @@ export const tools = defineTools([
       "https://www.youtube.com/whereisxurnow",
       "https://discord.com/invite/ZgudXPZ",
     ],
-    active: true,
+    active: false,
     category: ["tools"],
     crawl: true
   },
@@ -358,4 +376,28 @@ export const tools = defineTools([
   }
 ]);
 
-export type ToolSlug = (typeof tools)[number]["slug"];
+type ToolSlug = (typeof tools)[number]["slug"];
+
+export const quickLinks: TQuickLink[] = [
+  {
+    url: "https://www.reddit.com/r/DestinyTheGame/s/ClgN59WhVB",
+    description: "all free emblem codes",
+  }
+];
+
+export const changelog: Array<TChangelogEntry> = [
+  {
+    date: "2026-07-10",
+    text: "added Postmaster feature for quick links.",
+  },
+  {
+    date: "2026-07-08",
+    text: "added vault of cars",
+    slug: 'pete-carsons'
+  },
+  {
+    date: "2026-07-08",
+    text: "added destinyemblemcollector.com",
+    slug: 'emblem-collector'
+  },
+];

@@ -4,6 +4,7 @@ import { tools } from "../data";
 import useLocalStorageState from "use-local-storage-state";
 import Filter from "@/components/Filter";
 import FieldLog from "@/components/FieldLog";
+import QuickLinks from "@/components/QuickLinks";
 
 const activeTools = tools.filter((tool) => tool.active);
 const categories = activeTools.map((tool) => tool.category).flat();
@@ -27,6 +28,7 @@ function Index() {
 
   return (
     <>
+      <QuickLinks />
       <Filter
         filter={filter}
         setFilter={setFilter}
