@@ -6,7 +6,7 @@ import Filter from "@/components/Filter";
 import FieldLog from "@/components/FieldLog";
 
 const activeTools = tools.filter((tool) => tool.active);
-const categories = tools.map((tool) => tool.category).flat();
+const categories = activeTools.map((tool) => tool.category).flat();
 
 const uniqueCategories = [...new Set(categories)];
 

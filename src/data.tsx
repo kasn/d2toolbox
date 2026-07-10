@@ -18,7 +18,7 @@ export const tools = defineTools([
     requiresLogin: false,
     description: <>Equip the Starfarer 7M for extra dawning spirit</>,
     active: false,
-    category: ["c"],
+    category: [],
     crawl: false
   },
   {
