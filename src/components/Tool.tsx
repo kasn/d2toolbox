@@ -13,7 +13,7 @@ function Tool({ tool, index = 0 }: ToolProps) {
   return (
     <li
       style={{ "--card-index": index } as React.CSSProperties}
-      className="card-in group relative aspect-[16/10] overflow-hidden rounded-md shadow-lg outline-offset-4 transition duration-200 has-[a:focus-visible]:outline has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-white/90 hover:outline hover:outline-2 hover:outline-white/90 dark:shadow-black/50"
+      className="card-in group relative aspect-[16/10] overflow-hidden shadow-lg outline-offset-4 transition duration-200 has-[a:focus-visible]:outline has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-white/90 hover:outline hover:outline-2 hover:outline-white/90 dark:shadow-black/50"
     >
       <a
         href={tool.url}

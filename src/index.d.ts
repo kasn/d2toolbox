@@ -22,6 +22,17 @@ type TTool = {
   wait?: undefined | string;
 };
 
+type TQuickLink = {
+  url: string;
+  description: string;
+};
+
+type TChangelogEntry = {
+  date: string; // ISO date, e.g. "2026-07-08"
+  text: string;
+  slug?: ToolSlug; // optional tool slug; entry links to that tool's URL
+};
+
 type TSymbol = {
   id: string;
   name: string;

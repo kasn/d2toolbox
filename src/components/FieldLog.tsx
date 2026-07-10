@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { changelog } from "../changelog";
-import { tools } from "../data";
+import { tools, changelog } from "../data";
 
 const VISIBLE_COUNT = 3;
 
