@@ -1,54 +1,56 @@
 type TCategories =
-  | "inventory"
-  | "statistics"
-  | "analysis"
-  | "progress"
-  | "lore"
-  | "misc"
-  | "community"
-  | "data"
-  | "tools";
+	| "inventory"
+	| "statistics"
+	| "analysis"
+	| "progress"
+	| "lore"
+	| "misc"
+	| "community"
+	| "data"
+	| "tools";
 
 type TTool = {
-  slug: string;
-  name: string;
-  url: string;
-  description: ReactElement<any>;
-  additionalLinks?: Array<string>;
-  requiresLogin: boolean;
-  active: boolean;
-  category: categories[];
-  crawl: boolean;
-  wait?: undefined | string;
+	slug: string;
+	name: string;
+	url: string;
+	description: ReactElement;
+	additionalLinks?: string[];
+	requiresLogin: boolean;
+	active: boolean;
+	category: categories[];
+	crawl: boolean;
+	wait?: undefined | string;
 };
 
 type TQuickLink = {
-  url: string;
-  description: string;
+	url: string;
+	description: string;
 };
+
+type TToolSlug = import("./data").TToolSlug;
 
 type TChangelogEntry = {
-  date: string; // ISO date, e.g. "2026-07-08"
-  text: string;
-  slug?: ToolSlug; // optional tool slug; entry links to that tool's URL
+	date: string; // ISO date, e.g. "2026-07-08"
+	text: string;
+	slug?: TToolSlug; // optional tool slug; entry links to that tool's URL
 };
 
-type TSymbol = {
-  id: string;
-  name: string;
-  icon: StaticImageData;
+type TGlyph = {
+	id: string;
+	name: string;
+	icon: StaticImageData;
 };
 
 type BungieToken = {
-  access_token: string;
-  refresh_token: string;
-  expires_in: number;
-  received_at: number; // epoch ms
-  destiny_membership_id?: string;
-  membership_type?: BungieMembershipType;
+	access_token: string;
+	refresh_token: string;
+	expires_in: number;
+	received_at: number; // epoch ms
+	destiny_membership_id?: string;
+	membership_type?: BungieMembershipType;
 };
 
 type LocalProfile = {
-  displayName: string | undefined;
-  displayCode: number | undefined;
+	displayName: string | undefined;
+	displayCode: number | undefined;
 };
