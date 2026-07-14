@@ -387,6 +387,11 @@ export const quickLinks: TQuickLink[] = [
 
 export const changelog: Array<TChangelogEntry> = [
   {
+    date: "2026-07-13",
+    text: "added destiny.report, retired whereisxur.com",
+    slug: "destiny-report"
+  },
+  {
     date: "2026-07-10",
     text: "added Postmaster feature for quick links.",
   },
