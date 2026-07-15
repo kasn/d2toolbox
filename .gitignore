@@ -8,10 +8,6 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
-
 # production
 /build
 
@@ -33,13 +29,12 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
 certificates
 
+# astro
 dist
-.output
-.nitro
+.astro/
 
 d2profile
 d2-profile/

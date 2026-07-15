@@ -12,11 +12,10 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"includes": [
-			"**",
-			"!!src/routeTree.gen.ts",
-			"!!src/components/providers/ThemeProvider.tsx"
-		]
+		"includes": ["**"]
+	},
+	"html": {
+		"experimentalFullSupportEnabled": true
 	},
 	"formatter": {
 		"enabled": true,

@@ -1,0 +1,28 @@
+---
+import "@/styles/globals.css";
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="/favicon.ico" />
+		<title>Destiny 2 Tools</title>
+	</head>
+	<body class="page-atmosphere bg-zinc-950 antialiased">
+		<main>
+			<Header />
+			<div class="mx-auto max-w-screen-2xl px-6 pb-14 pt-24 lg:px-12">
+				<slot />
+			</div>
+			<Footer />
+		</main>
+		<script
+			is:inline
+			defer
+			src="https://zahlen.modepilot.de/script.js"
+			data-website-id="67a2c446-e3d5-4518-8b8f-c36049fff6b7"></script>
+	</body>
+</html>

@@ -1,0 +1,108 @@
+---
+import { getCollection } from "astro:content";
+import SocialIcon from "@/components/SocialIcon.astro";
+
+const OPEN_BY_DEFAULT_MAX = 3;
+
+const quickLinks = (await getCollection("quickLinks"))
+	.map((entry) => entry.data)
+	.sort((a, b) => a.order - b.order);
+const open = quickLinks.length <= OPEN_BY_DEFAULT_MAX;
+const newest = quickLinks[0];
+
+function hostLabel(url: string) {
+	const { hostname, pathname, searchParams } = new URL(url);
+	const host = hostname.replace(/^www\./, "");
+
+	if (host.endsWith("reddit.com")) {
+		const sub = pathname.match(/\/(r\/[^/]+)/)?.[1];
+		return sub ? `reddit · ${sub}` : "reddit";
+	}
+	if (host.endsWith("youtube.com") || host === "youtu.be") {
+		const channel = pathname.match(/\/(@[^/]+)/)?.[1];
+		if (channel) {
+			return `youtube · ${channel}`;
+		}
+		return searchParams.has("v") ? "youtube · video" : "youtube";
+	}
+	return host;
+}
+---
+
+{
+	quickLinks.length > 0 && newest && (
+		<section class="mb-6">
+			<button
+				type="button"
+				id="postmaster-toggle"
+				aria-expanded={open ? "true" : "false"}
+				class="group flex w-full items-center gap-x-3 border border-white/20 bg-zinc-900/60 px-3 py-2 text-left transition-colors duration-75 corner-cut hover:border-white hover:bg-white focus-visible:border-white focus-visible:bg-white focus-visible:outline-none"
+			>
+				<span class="font-display flex shrink-0 items-center gap-x-2 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-300 group-hover:text-black group-focus-visible:text-black">
+					<span aria-hidden="true" class="text-[0.6rem]">
+						◆
+					</span>
+					Postmaster ({quickLinks.length})
+				</span>
+				<span class="group-aria-expanded:hidden min-w-0 flex-1 truncate text-xs italic text-zinc-500 group-hover:text-black/60 group-focus-visible:text-black/60">
+					&ldquo;{newest.description}&rdquo;
+				</span>
+				<span class="group-aria-expanded:block hidden flex-1" />
+				<span
+					aria-hidden="true"
+					class="group-aria-expanded:rotate-180 shrink-0 text-[0.6rem] text-zinc-400 transition-transform duration-75 group-hover:text-black group-focus-visible:text-black"
+				>
+					▼
+				</span>
+			</button>
+
+			<ul
+				id="postmaster-list"
+				hidden={!open}
+				class="mt-3 grid grid-cols-1 gap-3 md:grid-cols-2"
+			>
+				{quickLinks.map((link, index) => (
+					<li style={`--card-index: ${index}`} class="card-in">
+						<a
+							href={link.url}
+							target="_blank"
+							rel="noreferrer"
+							class="group flex items-center gap-x-4 border border-white/20 bg-zinc-900/60 p-3 transition-colors duration-75 corner-cut hover:border-white hover:bg-white focus-visible:border-white focus-visible:bg-white focus-visible:outline-none"
+						>
+							<span class="grid size-10 shrink-0 place-items-center border border-white/20 text-zinc-300 group-hover:border-black/40 group-hover:text-black group-focus-visible:border-black/40 group-focus-visible:text-black">
+								<SocialIcon
+									as="span"
+									url={link.url}
+									bgColor="transparent"
+									fgColor="currentColor"
+									size={28}
+								/>
+							</span>
+							<span class="min-w-0">
+								<span class="font-display block truncate text-sm font-semibold text-white group-hover:text-black group-focus-visible:text-black">
+									{link.description}
+								</span>
+								<span class="block truncate text-xs italic text-zinc-500 group-hover:text-black/60 group-focus-visible:text-black/60">
+									&ldquo;{hostLabel(link.url)}&rdquo;
+								</span>
+							</span>
+						</a>
+					</li>
+				))}
+			</ul>
+		</section>
+	)
+}
+
+<script>
+	const toggle = document.getElementById("postmaster-toggle");
+	const list = document.getElementById("postmaster-list");
+
+	if (toggle && list) {
+		toggle.addEventListener("click", () => {
+			const open = toggle.getAttribute("aria-expanded") === "true";
+			toggle.setAttribute("aria-expanded", String(!open));
+			list.hidden = open;
+		});
+	}
+</script>
