@@ -1,0 +1,83 @@
+---
+import {
+	siBluesky,
+	siDiscord,
+	siGithub,
+	siGoogledrive,
+	siKofi,
+	siMastodon,
+	siPatreon,
+	siPaypal,
+	siReddit,
+	siThreads,
+	siTumblr,
+	siTwitch,
+	siX,
+	siYoutube,
+} from "simple-icons";
+
+type Props = {
+	url: string;
+	label?: string;
+	size?: number;
+	bgColor?: string;
+	fgColor?: string;
+	as?: "a" | "span";
+	class?: string;
+};
+
+const {
+	url,
+	label,
+	size = 50,
+	bgColor,
+	fgColor = "#fff",
+	as: Tag = "a",
+	class: className,
+} = Astro.props;
+
+// Generic "link" glyph (Material Symbols) for hosts without a brand icon.
+const genericPath =
+	"M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z";
+
+const matchers: [RegExp, { path: string; hex: string }][] = [
+	[/discord/i, siDiscord],
+	[/reddit/i, siReddit],
+	[/github/i, siGithub],
+	[/patreon/i, siPatreon],
+	[/paypal/i, siPaypal],
+	[/ko-?fi/i, siKofi],
+	[/youtu/i, siYoutube],
+	[/twitch/i, siTwitch],
+	[/bsky|bluesky/i, siBluesky],
+	[/threads\.net/i, siThreads],
+	[/mstdn|mastodon/i, siMastodon],
+	[/tumblr/i, siTumblr],
+	[/drive\.google/i, siGoogledrive],
+	[/twitter|\/\/(www\.)?x\.com/i, siX],
+];
+
+const href = /^[a-z]+:\/\//i.test(url) ? url : `https://${url}`;
+const icon = matchers.find(([pattern]) => pattern.test(href))?.[1];
+const path = icon?.path ?? genericPath;
+const bg = bgColor ?? (icon ? `#${icon.hex}` : "#757575");
+
+const linkAttrs =
+	Tag === "a"
+		? { href, target: "_blank", rel: "noopener noreferrer" }
+		: {};
+---
+
+<Tag
+	{...linkAttrs}
+	aria-label={label ?? href}
+	class:list={["inline-block", className]}
+	style={`width:${size}px;height:${size}px`}
+>
+	<svg viewBox="0 0 64 64" class="block h-full w-full" aria-hidden="true">
+		{bg !== "transparent" && <circle cx="32" cy="32" r="32" fill={bg} />}
+		<g transform="translate(14.72,14.72) scale(1.44)">
+			<path d={path} fill={fgColor}></path>
+		</g>
+	</svg>
+</Tag>

@@ -1,0 +1,33 @@
+---
+type Props = {
+	categories: TCategories[];
+};
+
+const { categories } = Astro.props;
+---
+
+<div class="flex items-center justify-between">
+	<ul class="flex flex-wrap">
+		{
+			categories.map((category) => (
+				<li>
+					<button
+						type="button"
+						data-filter-category={category}
+						class="btn-pill data-active:bg-gold/15 data-active:text-gold data-active:ring-gold/50 data-active:hover:text-gold mb-2 mr-3 inline-flex items-center"
+					>
+						{category}
+					</button>
+				</li>
+			))
+		}
+	</ul>
+	<button
+		type="button"
+		id="filter-clear"
+		hidden
+		class="btn-pill ml-2"
+	>
+		Clear
+	</button>
+</div>

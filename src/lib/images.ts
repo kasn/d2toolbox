@@ -1,31 +1,19 @@
-// Build-time responsive images via vite-imagetools.
-// Keyed by tool slug, matching src/images/{slug}.{png,jpg}.
+// Screenshot images for tool cards, keyed by tool slug,
+// matching src/images/{slug}.{png,jpg}. Optimized via astro:assets.
 
-const srcsets = import.meta.glob("../images/*.{png,jpg}", {
-	eager: true,
-	query: "?w=400;700;1400&format=webp&as=srcset",
-	import: "default",
-}) as Record<string, string>;
+import type { ImageMetadata } from "astro";
 
-const fallbacks = import.meta.glob("../images/*.{png,jpg}", {
-	eager: true,
-	query: "?w=700&format=webp",
-	import: "default",
-}) as Record<string, string>;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+	"../images/*.{png,jpg}",
+	{ eager: true },
+);
 
-function keyForSlug(slug: string): string | undefined {
-	return Object.keys(fallbacks).find((key) =>
-		key.match(new RegExp(`/${slug}\\.(png|jpg)$`)),
+export function toolImage(slug: string): ImageMetadata {
+	const key = Object.keys(images).find((k) =>
+		k.match(new RegExp(`/${slug}\\.(png|jpg)$`)),
 	);
-}
-
-export function responsiveImage(slug: string): {
-	src: string;
-	srcSet: string;
-} {
-	const key = keyForSlug(slug);
 	if (!key) {
 		throw new Error(`Unknown image for slug: ${slug}`);
 	}
-	return { src: fallbacks[key], srcSet: srcsets[key] };
+	return images[key].default;
 }

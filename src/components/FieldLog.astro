@@ -1,0 +1,93 @@
+---
+import { getCollection } from "astro:content";
+
+const VISIBLE_COUNT = 3;
+
+const changelog = (await getCollection("changelog"))
+	.map((entry) => entry.data)
+	.sort((a, b) => b.date.localeCompare(a.date));
+const tools = (await getCollection("tools")).map((entry) => entry.data);
+const hiddenCount = changelog.length - VISIBLE_COUNT;
+
+const formatter = new Intl.DateTimeFormat("en", {
+	month: "short",
+	day: "2-digit",
+});
+
+function entryUrl(slug: string | undefined): string | undefined {
+	if (!slug) {
+		return undefined;
+	}
+
+	return tools.find((tool) => tool.slug === slug)?.url;
+}
+---
+
+<aside aria-label="Latest changes" class="border-gold/60 max-w-md border-l-2 pl-4">
+	<p
+		class="font-display text-gold-foreground text-xs font-semibold uppercase tracking-[0.2em]"
+	>
+		Field log
+	</p>
+	<ul class="mt-2 flex flex-col gap-y-1.5">
+		{
+			changelog.map((entry, index) => {
+				const url = entryUrl(entry.slug);
+
+				return (
+					<li
+						hidden={index >= VISIBLE_COUNT}
+						data-fieldlog-extra={index >= VISIBLE_COUNT ? "" : undefined}
+						class="flex gap-x-3 text-sm leading-snug"
+					>
+						<time
+							datetime={entry.date}
+							class="font-display w-14 shrink-0 pt-px text-xs font-semibold uppercase tracking-widest text-zinc-500"
+						>
+							{formatter.format(new Date(entry.date))}
+						</time>
+						{url ? (
+							<a
+								href={url}
+								target="_blank"
+								rel="noreferrer"
+								class="link-gold text-zinc-300"
+							>
+								{entry.text}
+							</a>
+						) : (
+							<span class="text-zinc-300">{entry.text}</span>
+						)}
+					</li>
+				);
+			})
+		}
+	</ul>
+	{
+		hiddenCount > 0 && (
+			<button
+				type="button"
+				id="fieldlog-toggle"
+				class="font-display hover:text-gold-foreground mt-2 cursor-pointer text-xs font-semibold uppercase tracking-widest text-zinc-500 transition-colors"
+			>
+				+ {hiddenCount} more
+			</button>
+		)
+	}
+</aside>
+
+<script>
+	const toggle = document.getElementById("fieldlog-toggle");
+	const extras = document.querySelectorAll<HTMLElement>(
+		"[data-fieldlog-extra]",
+	);
+	let expanded = false;
+
+	toggle?.addEventListener("click", () => {
+		expanded = !expanded;
+		for (const extra of extras) {
+			extra.hidden = !expanded;
+		}
+		toggle.textContent = expanded ? "Show less" : `+ ${extras.length} more`;
+	});
+</script>

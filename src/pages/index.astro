@@ -1,0 +1,107 @@
+---
+import { getCollection } from "astro:content";
+import FieldLog from "@/components/FieldLog.astro";
+import Filter from "@/components/Filter.astro";
+import QuickLinks from "@/components/QuickLinks.astro";
+import Tool from "@/components/Tool.astro";
+import Layout from "@/layouts/Layout.astro";
+
+const tools = (await getCollection("tools"))
+	.map((entry) => entry.data)
+	.sort((a, b) => a.order - b.order);
+const activeTools = tools.filter((tool) => tool.active);
+const uniqueCategories = [
+	...new Set(activeTools.flatMap((tool) => tool.category)),
+];
+---
+
+<Layout>
+	<QuickLinks />
+	<Filter categories={uniqueCategories} />
+	<div
+		class="mt-6 flex flex-col justify-between gap-6 md:flex-row md:items-end"
+	>
+		<p
+			id="tool-count"
+			class="font-display text-xs font-semibold tracking-[0.2em] text-zinc-500"
+		>
+			{activeTools.length} / {activeTools.length}
+		</p>
+		<FieldLog />
+	</div>
+	<ul
+		class="not-focus-visible:focus:outline-hidden mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
+	>
+		{activeTools.map((tool, index) => <Tool tool={tool} index={index} />)}
+	</ul>
+</Layout>
+
+<script>
+	const STORAGE_KEY = "filter";
+
+	function readFilter(): string[] {
+		try {
+			const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "[]");
+			return Array.isArray(parsed) ? parsed : [];
+		} catch {
+			return [];
+		}
+	}
+
+	let filter = readFilter();
+
+	const buttons = [
+		...document.querySelectorAll<HTMLButtonElement>("[data-filter-category]"),
+	];
+	const cards = [...document.querySelectorAll<HTMLElement>("[data-tool]")];
+	const count = document.getElementById("tool-count");
+	const clear = document.getElementById("filter-clear");
+
+	function apply() {
+		for (const button of buttons) {
+			button.toggleAttribute(
+				"data-active",
+				filter.includes(button.dataset.filterCategory ?? ""),
+			);
+		}
+
+		let visible = 0;
+		for (const card of cards) {
+			const categories = (card.dataset.categories ?? "")
+				.split(",")
+				.filter(Boolean);
+			const show =
+				filter.length === 0 ||
+				categories.some((category) => filter.includes(category));
+			card.hidden = !show;
+			if (show) {
+				visible++;
+			}
+		}
+
+		if (count) {
+			count.textContent = `${visible} / ${cards.length}`;
+		}
+		if (clear) {
+			clear.hidden = filter.length === 0;
+		}
+		localStorage.setItem(STORAGE_KEY, JSON.stringify(filter));
+	}
+
+	for (const button of buttons) {
+		button.addEventListener("click", () => {
+			const category = button.dataset.filterCategory ?? "";
+			filter = filter.includes(category)
+				? filter.filter((item) => item !== category)
+				: [...filter, category];
+			apply();
+		});
+	}
+
+	clear?.addEventListener("click", () => {
+		filter = [];
+		apply();
+	});
+
+	apply();
+</script>

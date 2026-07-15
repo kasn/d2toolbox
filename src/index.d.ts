@@ -1,56 +1,16 @@
-type TCategories =
-	| "inventory"
-	| "statistics"
-	| "analysis"
-	| "progress"
-	| "lore"
-	| "misc"
-	| "community"
-	| "data"
-	| "tools";
-
-type TTool = {
-	slug: string;
-	name: string;
-	url: string;
-	description: ReactElement;
-	additionalLinks?: string[];
-	requiresLogin: boolean;
-	active: boolean;
-	category: categories[];
-	crawl: boolean;
-	wait?: undefined | string;
-};
-
-type TQuickLink = {
-	url: string;
-	description: string;
-};
+type TCategories = import("./lib/schemas").TCategories;
+type TTool = import("./lib/schemas").TTool;
+type TQuickLink = import("./lib/schemas").TQuickLink;
 
 type TToolSlug = import("./data").TToolSlug;
 
-type TChangelogEntry = {
-	date: string; // ISO date, e.g. "2026-07-08"
-	text: string;
-	slug?: TToolSlug; // optional tool slug; entry links to that tool's URL
+// Narrows the schema's plain-string slug to the known tool slugs for authoring.
+type TChangelogEntry = Omit<import("./lib/schemas").TChangelogEntry, "slug"> & {
+	slug?: TToolSlug;
 };
 
 type TGlyph = {
 	id: string;
 	name: string;
-	icon: StaticImageData;
-};
-
-type BungieToken = {
-	access_token: string;
-	refresh_token: string;
-	expires_in: number;
-	received_at: number; // epoch ms
-	destiny_membership_id?: string;
-	membership_type?: BungieMembershipType;
-};
-
-type LocalProfile = {
-	displayName: string | undefined;
-	displayCode: number | undefined;
+	icon: import("astro").ImageMetadata;
 };

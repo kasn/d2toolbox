@@ -6,12 +6,8 @@ export const tools = defineTools([
 		name: "Vault Of Cars",
 		url: "https://petecarsons.com/",
 		requiresLogin: false,
-		description: (
-			<>
-				Do you have what it takes to face Pete Carsons in the Vault of Cars and
-				stop him from purchasing all of the remaining cars in The Last City?
-			</>
-		),
+		description:
+			"Do you have what it takes to face Pete Carsons in the Vault of Cars and stop him from purchasing all of the remaining cars in The Last City?",
 		active: true,
 		category: ["community"],
 		crawl: true,
@@ -21,7 +17,7 @@ export const tools = defineTools([
 		name: "Reminder",
 		url: "https://www.light.gg/db/items/472776702/starfarer-7m/",
 		requiresLogin: false,
-		description: <>Equip the Starfarer 7M for extra dawning spirit</>,
+		description: "Equip the Starfarer 7M for extra dawning spirit",
 		active: false,
 		category: [],
 		crawl: false,
@@ -31,12 +27,8 @@ export const tools = defineTools([
 		name: "BRAYTECH",
 		url: "https://bray.tech/",
 		requiresLogin: true,
-		description: (
-			<>
-				Explore Destiny through Braytech for sweet gains and insight into your
-				fights against the forces of Darkness
-			</>
-		),
+		description:
+			"Explore Destiny through Braytech for sweet gains and insight into your fights against the forces of Darkness",
 		additionalLinks: [
 			"https://www.threads.net/@braytechapp",
 			"https://discord.com/invite/8jESWWX",
@@ -52,14 +44,8 @@ export const tools = defineTools([
 		name: "Destiny Item Manager",
 		url: "https://app.destinyitemmanager.com/",
 		requiresLogin: true,
-		description: (
-			<>
-				Control Your Items Your Way.
-				<br />
-				Swap items, check stats, and build the loadout to Become Legend with
-				Destiny Item Manager.
-			</>
-		),
+		description:
+			"Control Your Items Your Way.<br />Swap items, check stats, and build the loadout to Become Legend with Destiny Item Manager.",
 		additionalLinks: [
 			"https://mstdn.games/@ThisIsDIM",
 			"https://www.reddit.com/r/DestinyItemManager/",
@@ -75,15 +61,8 @@ export const tools = defineTools([
 		slug: "destiny-report",
 		name: "destiny.report",
 		url: "https://destiny.report/",
-		description: (
-			<>
-				destiny.report is a fast tool for exploring Destiny 2 weapons. Search
-				the entire arsenal by name, perk, archetype, damage type, stat, source,
-				and more, then dig into any weapon's perks, stats, and rolls.
-				<br />
-				The aim is accurate, up-to-date weapon data that's quick to search.
-			</>
-		),
+		description:
+			"destiny.report is a fast tool for exploring Destiny 2 weapons. Search the entire arsenal by name, perk, archetype, damage type, stat, source, and more, then dig into any weapon's perks, stats, and rolls.<br />The aim is accurate, up-to-date weapon data that's quick to search.",
 		requiresLogin: false,
 		additionalLinks: [],
 		category: ["data"],
@@ -94,14 +73,8 @@ export const tools = defineTools([
 		slug: "armor-picker",
 		name: "D2ArmorPicker",
 		url: "https://d2armorpicker.com/#/",
-		description: (
-			<>
-				D2ArmorPicker (or short D2AP) is a small web-app to quickly find armor
-				that fits your desired stat requirements. It uses the armor in your
-				vault, inventory and postmaster, calculates every possible variation and
-				shows only those that fulfill the given requirements.
-			</>
-		),
+		description:
+			"D2ArmorPicker (or short D2AP) is a small web-app to quickly find armor that fits your desired stat requirements. It uses the armor in your vault, inventory and postmaster, calculates every possible variation and shows only those that fulfill the given requirements.",
 		requiresLogin: true,
 		additionalLinks: [
 			"https://twitter.com/MijagoCoding/",
@@ -117,7 +90,7 @@ export const tools = defineTools([
 		name: "D2Checkpoint.com",
 		url: "https://d2checkpoint.com/",
 		requiresLogin: false,
-		description: <>Find checkpoints for raid and dungeon encounters</>,
+		description: "Find checkpoints for raid and dungeon encounters",
 		additionalLinks: [
 			"https://discord.com/invite/d2checkpoint",
 			"https://ko-fi.com/d2checkpoint",
@@ -131,9 +104,8 @@ export const tools = defineTools([
 		name: "light.gg",
 		url: "https://www.light.gg/",
 		requiresLogin: false,
-		description: (
-			<>home of the most powerful Destiny 2 Database & Tools on the Internet</>
-		),
+		description:
+			"home of the most powerful Destiny 2 Database & Tools on the Internet",
 		additionalLinks: [
 			"https://twitter.com/lightdotgg",
 			"https://discord.com/invite/pmHRd5U",
@@ -149,7 +121,7 @@ export const tools = defineTools([
 		name: "Foundry",
 		url: "https://d2foundry.gg/",
 		requiresLogin: true,
-		description: <>Your companion to Destiny 2 weapons and perks.</>,
+		description: "Your companion to Destiny 2 weapons and perks.",
 		active: false,
 		additionalLinks: [
 			"https://bsky.app/profile/gothfem.me",
@@ -164,19 +136,8 @@ export const tools = defineTools([
 		name: "engram.blue",
 		url: "https://engram.blue/",
 		requiresLogin: true,
-		description: (
-			<>
-				Track your progress for weapon pattern unlocks and crafted weapon levels
-				<br />
-				King’s Fall Deepsight puzzle helper
-				<br />
-				Vow of the Disciple Deepsight puzzle helper
-				<br />
-				How well do you know your vault?
-				<br />
-				Browse Wishlist recommendations for weapons
-			</>
-		),
+		description:
+			"Track your progress for weapon pattern unlocks and crafted weapon levels<br />King’s Fall Deepsight puzzle helper<br />Vow of the Disciple Deepsight puzzle helper<br />How well do you know your vault?<br />Browse Wishlist recommendations for weapons",
 		additionalLinks: ["https://discord.com/invite/Kfuqcw4msG"],
 		active: true,
 		category: ["analysis", "tools"],
@@ -185,12 +146,8 @@ export const tools = defineTools([
 	{
 		slug: "recipes",
 		name: "Destiny Recipes",
-		description: (
-			<>
-				You can find here a list of helpful tools for Destiny 2. I like to call
-				them recipes for success.
-			</>
-		),
+		description:
+			"You can find here a list of helpful tools for Destiny 2. I like to call them recipes for success.",
 		url: "https://destinyrecipes.com/",
 		requiresLogin: true,
 		additionalLinks: [
@@ -207,12 +164,8 @@ export const tools = defineTools([
 		name: "D2 Checklist",
 		url: "https://www.d2checklist.com/",
 		requiresLogin: true,
-		description: (
-			<>
-				D2Checklist uses the Bungie API to help make achieving your goals in
-				Destiny easier and more fun.
-			</>
-		),
+		description:
+			"D2Checklist uses the Bungie API to help make achieving your goals in Destiny easier and more fun.",
 		additionalLinks: [
 			"https://www.reddit.com/r/destinychecklistnet/",
 			"https://github.com/dcaslin/d2-checklist/",
@@ -228,13 +181,8 @@ export const tools = defineTools([
 		name: "Ishtar Collective",
 		url: "https://www.ishtar-collective.net/",
 		requiresLogin: false,
-		description: (
-			<>
-				Our goal is to collect, organize and summarize any information that
-				could be useful to the research being carried out by Ishtar Collective
-				personnel.
-			</>
-		),
+		description:
+			"Our goal is to collect, organize and summarize any information that could be useful to the research being carried out by Ishtar Collective personnel.",
 		additionalLinks: [
 			"https://twitter.com/IshtarColl",
 			"https://www.patreon.com/ishtarcollective",
@@ -251,7 +199,7 @@ export const tools = defineTools([
 		slug: "raid-report",
 		name: "raid.report",
 		url: "https://raid.report",
-		description: <>Show raid completions and stats</>,
+		description: "Show raid completions and stats",
 		requiresLogin: false,
 		additionalLinks: [
 			"https://twitter.com/RaidReport",
@@ -265,7 +213,7 @@ export const tools = defineTools([
 		slug: "lost-sector-report",
 		name: "D2 Lost Sector Report",
 		url: "https://d2lostsector.report/",
-		description: <>Your daily Destiny 2 Expert & Master Lost Sector report. </>,
+		description: "Your daily Destiny 2 Expert & Master Lost Sector report. ",
 		requiresLogin: false,
 		additionalLinks: [
 			"https://bsky.app/profile/d2lostsector.report",
@@ -281,7 +229,7 @@ export const tools = defineTools([
 		slug: "today-in-destiny",
 		name: "TodayInDestiny",
 		url: "https://todayindestiny.com/",
-		description: <>What should we do today Guardian?</>,
+		description: "What should we do today Guardian?",
 		requiresLogin: false,
 		additionalLinks: [
 			"https://www.patreon.com/todayindestiny",
@@ -295,12 +243,8 @@ export const tools = defineTools([
 		slug: "synergy",
 		name: "D2 Synergy",
 		url: "https://d2synergy.com/",
-		description: (
-			<>
-				Synergy groups progressions together and gives recommendations for
-				optimal progression.
-			</>
-		),
+		description:
+			"Synergy groups progressions together and gives recommendations for optimal progression.",
 		requiresLogin: true,
 		additionalLinks: [
 			"https://github.com/dev-brendanprice/D2-Synergy",
@@ -315,7 +259,7 @@ export const tools = defineTools([
 		name: "Destiny Emblem Collector",
 		url: "https://destinyemblemcollector.com/",
 		requiresLogin: false,
-		description: <>Browse, track, and collect every Destiny 2 emblem</>,
+		description: "Browse, track, and collect every Destiny 2 emblem",
 		additionalLinks: ["https://x.com/emblemcollector"],
 		active: true,
 		category: ["inventory", "data"],
@@ -325,12 +269,8 @@ export const tools = defineTools([
 		slug: "aegis",
 		name: "Aegis Spreadsheets",
 		url: "https://drive.google.com/drive/folders/1AL3GM6rSSrm4LtSZeayxpSUsvSJdsiU3",
-		description: (
-			<>
-				Boss Damage, Boss Health and endgame analysis. Exhaustive and detailed
-				breakdown of all possible damage numbers
-			</>
-		),
+		description:
+			"Boss Damage, Boss Health and endgame analysis. Exhaustive and detailed breakdown of all possible damage numbers",
 		requiresLogin: false,
 		additionalLinks: [
 			"https://www.youtube.com/@TheAegisRelic",
@@ -344,7 +284,7 @@ export const tools = defineTools([
 		slug: "where-is-xur",
 		name: "Where is Xur?",
 		url: "https://whereisxur.com/",
-		description: <>Nobody ever asks &ldquo;How is Xur?&rdquo;</>,
+		description: "Nobody ever asks “How is Xur?”",
 		requiresLogin: false,
 		additionalLinks: [
 			"https://twitter.com/xurwatchlive",
@@ -361,7 +301,7 @@ export const tools = defineTools([
 		name: "Sundered Doctrine",
 		url: "/sundered-doctrine",
 		requiresLogin: false,
-		description: <>Sundered Doctrine Resources</>,
+		description: "Sundered Doctrine Resources",
 		active: true,
 		category: [],
 		crawl: false,
@@ -370,7 +310,7 @@ export const tools = defineTools([
 		slug: "bungo",
 		name: "bungie.net",
 		url: "https://www.bungie.net/7",
-		description: <>the home of Destiny2</>,
+		description: "the home of Destiny2",
 		requiresLogin: true,
 		additionalLinks: [
 			"https://twitter.com/bungie",
