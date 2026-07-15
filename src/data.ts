@@ -329,6 +329,10 @@ export const quickLinks: TQuickLink[] = [
 		url: "https://www.reddit.com/r/DestinyTheGame/s/ClgN59WhVB",
 		description: "all free emblem codes",
 	},
+	{
+		url: "https://docs.google.com/spreadsheets/d/1WDj-vExf9c982PVc1nRRfjadhkcZFqa7nv14cCMI8C8/htmlview#gid=341150307",
+		description: "ALL Monument of Triumph Legendary Loot Sources",
+	},
 ];
 
 export const changelog: TChangelogEntry[] = [
