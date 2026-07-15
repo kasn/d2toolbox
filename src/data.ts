@@ -336,6 +336,10 @@ export const quickLinks: TQuickLink[] = [
 ];
 
 export const changelog: TChangelogEntry[] = [
+  {
+		date: "2026-07-15",
+		text: "add all loot sources",
+	},
 	{
 		date: "2026-07-13",
 		text: "added destiny.report, retired whereisxur.com",
