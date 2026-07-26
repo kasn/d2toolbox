@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import FieldLog from "@/components/FieldLog.astro";
 import Filter from "@/components/Filter.astro";
 import QuickLinks from "@/components/QuickLinks.astro";
+import SearchPalette from "@/components/SearchPalette.astro";
 import Tool from "@/components/Tool.astro";
 import Layout from "@/layouts/Layout.astro";
 
@@ -13,11 +14,20 @@ const activeTools = tools.filter((tool) => tool.active);
 const uniqueCategories = [
 	...new Set(activeTools.flatMap((tool) => tool.category)),
 ];
+const categoryCounts = activeTools.reduce<Partial<Record<TCategories, number>>>(
+	(acc, tool) => {
+		for (const category of tool.category) {
+			acc[category] = (acc[category] ?? 0) + 1;
+		}
+		return acc;
+	},
+	{},
+);
 ---
 
 <Layout>
 	<QuickLinks />
-	<Filter categories={uniqueCategories} />
+	<Filter categories={uniqueCategories} counts={categoryCounts} />
 	<div
 		class="mt-6 flex flex-col justify-between gap-6 md:flex-row md:items-end"
 	>
@@ -27,7 +37,10 @@ const uniqueCategories = [
 		>
 			{activeTools.length} / {activeTools.length}
 		</p>
-		<FieldLog />
+		<div class="flex items-center gap-4">
+			<SearchPalette />
+			<FieldLog />
+		</div>
 	</div>
 	<ul
 		class="not-focus-visible:focus:outline-hidden mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"

@@ -1,0 +1,201 @@
+---
+---
+
+<button
+	type="button"
+	id="search-trigger"
+	aria-haspopup="dialog"
+	class="btn-pill inline-flex items-center gap-2"
+>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		aria-hidden="true"
+		class="h-3.5 w-3.5"
+	>
+		<circle cx="11" cy="11" r="7"></circle>
+		<path d="m21 21-4.35-4.35"></path>
+	</svg>
+	Search
+	<kbd
+		id="search-kbd"
+		class="ml-1 rounded-xs bg-white/10 px-1.5 py-0.5 text-[10px] font-semibold normal-case tracking-normal text-white/50"
+	>
+		Ctrl K
+	</kbd>
+</button>
+
+<dialog
+	id="search-dialog"
+	aria-label="Search tools"
+	class="fixed inset-x-0 top-[15vh] m-0 mx-auto w-[calc(100%-2rem)] max-w-lg border-0 bg-transparent p-0 backdrop:bg-zinc-950/80 backdrop:backdrop-blur-sm"
+>
+	<div
+		style="--cut: 16px"
+		class="corner-cut border border-white/15 bg-zinc-950 shadow-2xl shadow-black/60"
+	>
+		<div class="flex items-center gap-3 border-b border-white/10 px-4">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				aria-hidden="true"
+				class="h-4 w-4 shrink-0 text-white/40"
+			>
+				<circle cx="11" cy="11" r="7"></circle>
+				<path d="m21 21-4.35-4.35"></path>
+			</svg>
+			<input
+				id="search-input"
+				type="text"
+				autocomplete="off"
+				spellcheck="false"
+				autofocus
+				placeholder="Search tools…"
+				aria-label="Search tools"
+				class="h-14 flex-1 bg-transparent text-sm text-white placeholder:text-white/30 focus:outline-none"
+			/>
+			<kbd class="rounded-xs bg-white/10 px-1.5 py-0.5 text-[10px] font-semibold text-white/50">
+				Esc
+			</kbd>
+		</div>
+		<ul id="search-results" class="max-h-80 divide-y divide-white/5 overflow-y-auto"></ul>
+		<p id="search-empty" hidden class="px-4 py-6 text-center text-sm text-white/40">
+			No tools match your search.
+		</p>
+	</div>
+</dialog>
+
+<script>
+	type Result = { name: string; url: string; category: string };
+
+	const trigger = document.getElementById("search-trigger");
+	const kbdHint = document.getElementById("search-kbd");
+	const dialogEl = document.getElementById("search-dialog") as HTMLDialogElement | null;
+	const inputEl = document.getElementById("search-input") as HTMLInputElement | null;
+	const resultsListEl = document.getElementById("search-results");
+	const emptyStateEl = document.getElementById("search-empty");
+
+	if (dialogEl && inputEl && resultsListEl && emptyStateEl) {
+		const dialog = dialogEl;
+		const input = inputEl;
+		const resultsEl = resultsListEl;
+		const emptyEl = emptyStateEl;
+
+		if (navigator.userAgent.toLowerCase().includes("mac") && kbdHint) {
+			kbdHint.textContent = "⌘K";
+		}
+
+		const all: Result[] = [
+			...document.querySelectorAll<HTMLElement>("[data-tool]"),
+		].map((card) => {
+			const anchor = card.querySelector("a");
+			const name = card.querySelector("h2")?.textContent?.trim() ?? "";
+			const category = (card.dataset.categories ?? "").split(",")[0] ?? "";
+			return { name, url: anchor?.getAttribute("href") ?? "#", category };
+		});
+
+		let filtered: Result[] = all;
+		let activeIndex = 0;
+
+		function renderResults() {
+			resultsEl.innerHTML = "";
+			emptyEl.hidden = filtered.length !== 0;
+
+			for (const [i, tool] of filtered.entries()) {
+				const li = document.createElement("li");
+				const a = document.createElement("a");
+				a.href = tool.url;
+				a.target = "_blank";
+				a.rel = "noreferrer";
+				a.className =
+					"data-active:bg-gold/10 data-active:text-gold flex items-center justify-between gap-4 px-4 py-2.5 text-sm text-white/80 transition-colors";
+				a.toggleAttribute("data-active", i === activeIndex);
+				a.addEventListener("mouseenter", () => setActive(i));
+				a.addEventListener("click", () => dialog.close());
+
+				const name = document.createElement("span");
+				name.className = "font-display font-semibold";
+				name.textContent = tool.name;
+
+				const category = document.createElement("span");
+				category.className = "text-xs uppercase tracking-widest text-white/30";
+				category.textContent = tool.category;
+
+				a.append(name, category);
+				li.append(a);
+				resultsEl.append(li);
+			}
+
+			resultsEl.querySelector("[data-active]")?.scrollIntoView({ block: "nearest" });
+		}
+
+		function setActive(index: number) {
+			activeIndex = Math.max(0, Math.min(index, filtered.length - 1));
+			renderResults();
+		}
+
+		function openDialog() {
+			filtered = all;
+			activeIndex = 0;
+			input.value = "";
+			renderResults();
+			dialog.showModal();
+			input.focus();
+		}
+
+		trigger?.addEventListener("click", openDialog);
+
+		window.addEventListener("keydown", (event) => {
+			if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+				event.preventDefault();
+				if (dialog.open) {
+					input.focus();
+				} else {
+					openDialog();
+				}
+			}
+		});
+
+		dialog.addEventListener("click", (event) => {
+			if (event.target === dialog) {
+				dialog.close();
+			}
+		});
+
+		input.addEventListener("input", () => {
+			const query = input.value.trim().toLowerCase();
+			filtered = query
+				? all.filter((tool) => tool.name.toLowerCase().includes(query))
+				: all;
+			activeIndex = 0;
+			renderResults();
+		});
+
+		dialog.addEventListener("keydown", (event) => {
+			if (event.key === "ArrowDown") {
+				event.preventDefault();
+				setActive(activeIndex + 1);
+			} else if (event.key === "ArrowUp") {
+				event.preventDefault();
+				setActive(activeIndex - 1);
+			} else if (event.key === "Enter") {
+				const link = filtered[activeIndex];
+				if (link) {
+					event.preventDefault();
+					window.open(link.url, "_blank", "noreferrer");
+					dialog.close();
+				}
+			}
+		});
+	}
+</script>

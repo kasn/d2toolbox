@@ -1,9 +1,10 @@
 ---
 type Props = {
 	categories: TCategories[];
+	counts: Partial<Record<TCategories, number>>;
 };
 
-const { categories } = Astro.props;
+const { categories, counts } = Astro.props;
 ---
 
 <div class="flex items-center justify-between">
@@ -17,6 +18,7 @@ const { categories } = Astro.props;
 						class="btn-pill data-active:bg-gold/15 data-active:text-gold data-active:ring-gold/50 data-active:hover:text-gold mb-2 mr-3 inline-flex items-center"
 					>
 						{category}
+						<span class="ml-1.5 opacity-50">{counts[category] ?? 0}</span>
 					</button>
 				</li>
 			))
